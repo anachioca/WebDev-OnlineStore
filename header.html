@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .top-bar{overflow: hidden;
+            background-color: #323232;
+            position: fixed;
+            top: 0; 
+            width: 100%;
+            height: 100px;}
+
+        /* .top-bar a {float: right;
+            display: block;
+            size: 20px;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 2px 16px;
+            text-decoration: none;} */
+        
+        #logo {
+            width: 9%;
+            margin-left: 5%;
+        }
+
+        #logo img {
+            height: 90px;
+        }
+
+        #search {
+            width: 68%;
+            height: 50%;
+            float: right;
+            margin-top: 10px;
+            min-width: none;
+        }
+
+        #searchimg {
+            width: 5%;
+            float: left;
+            margin-left: 5%;
+            margin-right: 2%;
+        }
+
+        #search input {
+            float: right;
+            background-color: #323232;
+            font-size: 20px;
+            color:#ADC178;
+            width: 78%;
+            height: 40px;
+            border: none;
+            border-bottom: 2px solid #ADC178;
+            margin-right: 10%;
+        }
+
+        #login {
+            text-align: center;
+            background-color: #ADC178;
+            float: right;
+            height: 60px;
+            width: 10%;
+            margin: 10px 5% 10px 0;
+            padding: 10px;
+        }
+
+        #login a {
+            color: #323232;
+            font-size: 100%;
+            float: right;
+            height: 80px;
+            margin: 10px 5% 10px 0;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class = "top-bar">
+        <a id = "logo" href="header.html"><img src="logo (1).png" alt="logo"></a>
+        
+        <div id="login">
+            <a href="#cadastro">Faça Login ou cadastre-se</a>
+        </div>
+
+        <div id="search">
+            <img id="searchimg" src="search.jpg" alt="searchimg">
+            <form>
+                <input type="search" placeholder="o que você quer procurar?">
+            </form>
+        </div>
+
+        <div id="listProducts">
+            <ul>
+                <li>Produtos</li>
+                <li>Adubos</li>
+                <li>Sementes</li>
+                <li>Acessórios</li>
+            </ul>
+        </div>
+
+        
+            
+    </div>
+
+</body>
+</html>
