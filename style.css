@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #ADC178;
+}
+
+.top-bar{overflow: hidden;
+    background-color: #323232;
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    height: 100px;}
+
+/* .top-bar a {float: right;
+    display: block;
+    size: 20px;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 2px 16px;
+    text-decoration: none;} */
+
+#logo {
+    width: 9%;
+    margin-left: 5%;
+}
+
+#logo img {
+    height: 90px;
+}
+
+#search {
+    width: 68%;
+    height: 50%;
+    float: right;
+    margin-top: 10px;
+    min-width: none;
+}
+
+#searchimg {
+    width: 5%;
+    float: left;
+    margin-left: 5%;
+    margin-right: 2%;
+}
+
+#search input {
+    float: right;
+    background-color: #323232;
+    font-size: 20px;
+    color:#ADC178;
+    width: 78%;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #ADC178;
+    margin-right: 10%;
+}
+
+#login {
+    text-align: center;
+    background-color: #ADC178;
+    float: right;
+    height: 60px;
+    width: 10%;
+    margin: 10px 5% 10px 0;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+#login a {
+    color: #323232;
+    font-size: 100%;
+    float: right;
+    height: 80px;
+    margin: 10px 5% 10px 0;
+    text-decoration: none;
+}
+
+/*#listProducts {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #323232;
+}*/

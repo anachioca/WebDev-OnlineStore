@@ -1,0 +1,43 @@
+body {
+	background-color: #ADC178;
+	margin: 0;
+	background-image: url('img/backg.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  	background-size: cover;
+}
+
+
+.button {
+	min-width: 50%;
+	border: none;
+	background-color: #323232;
+	padding: 1px 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 30px;
+	margin: 4px 2px;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #ADC178;
+}
+
+#center {
+	align-content: center;
+	text-align-last: center;
+}
+
+#header{
+  margin: 0px;
+}
+
+#header iframe{
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0px;
+  width: 100%;
+  height: auto;
+  border-style: none;
+}
