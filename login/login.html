@@ -17,18 +17,25 @@
   </head>
   <body>
   <div id="header">
-    <iframe src="./header.html" width="" height=""></iframe>
+    <iframe src="../header.html" width="" height=""></iframe>
   </div>
+  <h1>Login</h1>
   <div class="login">
     <form class="lofinform" action="index.html" method="post">
-      <div class="form form-email">
-        <input type="email" name="email" id="form-input" placeholder="Email" required>
+      <div class="form lable-float">
+        <input type="text" name="email" id="form-input" required/>
+        <label>Email</label>
       </div>
-      <div class="form form-psw">
-        <input type="password" id="form-input" name="password" placeholder="Senha" required>
+      <div class="form lable-float">
+        <input type="text" id="form-input" placeholder="" name="password" required/>
+        <label>Senha</label>
       </div>
       <div class="form form-button">
         <button type="submit" name="button">Entrar</button>
+      </div>
+      <div class="links">
+        <a href="#">Criar conta</a><br>
+        <a href="#">Esqueci minha senha</a>
       </div>
     </form>
   </div>
