@@ -4,35 +4,52 @@
     <meta charset="UTF-8">
     <title>Document</title>
    <link href="main.css" rel="stylesheet">
-
-   <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>
-
-    <script> 
-        $(function(){
-        $("#header").load("header.html");
-        $("#header").load("footer.html");
-        });
-    </script> 
+   <link href="style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div id="header">
-        <iframe src="header.html" width="" height=""></iframe>
+    <!-- ------------------- Header --------------------- -->
+
+    <div class="topnav">
+
+        <div id="logo">
+            <a id = "logo" href="main.html"><img src="img/logo (1).png" alt="logo"></a>
+        </div>
+
+        <div id="links">
+            
+            <ul>
+                <li><a href="default.asp">menu</a></li>
+                <li><a href="about.asp">produtos</a></li>
+                <li><a href="about.asp">terra</a></li>
+                <li><a href="news.asp">adubos</a></li>
+                <li><a href="contact.asp">ferramentas</a></li>
+                <li><a href="about.asp">meu carrinho</a></li>
+              </ul>
+        
+        </div>
+
+        <!-- Quando aprendermos JavaScript, este será um menu drop down -->
+        <div id="dropDownMenu">
+            <a id = "menu"><img src="menu.png" alt="logo"></a>
+        </div>
+
+        <div id="login">
+            <a href="login.html">Faça Login ou cadastre-se</a>
+        </div>
+
     </div>
+
+    <!-- ------------------- Fim header --------------------- -->
+
     
     <div id="mainbox">
         <div id="text">
             <p>Compre plantas sem sair de casa</p>
         </div>
     </div>
-
-    <div id="footer"></div>
     
 </body>
 
