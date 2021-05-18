@@ -1,7 +1,7 @@
 #mainbox {
     width: 100vw;
-    height: 100vh;
-    background: url(web1.png) center center/100% 100% no-repeat fixed;
+    height: calc(100vh - 100px);
+    background: url(web1.png) center bottom/100% 100% no-repeat fixed;
 }
 
 #text {

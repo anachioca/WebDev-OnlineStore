@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     font-size: 100%;
     font-family: sans-serif;
@@ -14,19 +14,53 @@ body {
 
 .topnav a {
     text-decoration: none;
+} */
+
+.logo img {
+    height: 80px;
 }
 
-#logo {
-    margin-left: 5%;
-    width: 10%;
-    float: left;
+.navbar-custom {
+    background-color: #323232;
+    background-image: none;
 }
 
-#logo img {
-    height: 90px;
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #ADC178;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #ADC178;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ADC178;
 }
 
-#links {
+.btn-custom {
+    background-color: #ADC178;
+    border-color: #ADC178;
+    color: #323232;
+}
+
+.btn-custom:hover {
+    background-color: #323232;
+    color: #ADC178;
+    border-color: #323232;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(173, 193, 120, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+  
+.custom-toggler.navbar-toggler {
+    border-color: #ADC178;
+} 
+
+/* #links {
     width: 60%;
     font-size: 125%;
     float: left;
@@ -46,9 +80,9 @@ body {
     display: block;
     list-style-type: none;
     flex: 0 1 auto;
-}
+} */
 
-#links li a {
+/* #links li a {
     color:#ADC178;
 }
 
@@ -106,4 +140,4 @@ body {
         width: 60px;
     }
 
-}
+} */
