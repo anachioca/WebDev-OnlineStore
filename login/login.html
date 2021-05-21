@@ -3,24 +3,83 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="loginstyle.css" />
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous">
-    </script>
-    <script>
-      $(function(){
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-      });
-    </script>
+    <link href="../style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-  <div id="header">
-    <iframe src="../header.html" width="" height=""></iframe>
-  </div>
+    <!-- ------------------- Header --------------------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+
+        <a class="navbar-brand logo" href="main.html"><img src="img/logo (1).png" class="img-responsive"alt="logo"></a>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"> Produtos <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Terra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Adubo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Ferramentas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Meu Carrinho</a>
+            </li>
+
+          </ul>
+
+          <form class="form-inline">
+            <button class="btn btn-outline-success btn-custom" type="button">Entre ou Cadastre-se</button>
+          </form>
+
+        </div>
+      </nav>
+
+
+    <!-- <div class="topnav">
+
+        <div id="logo">
+            <a id = "logo" href="main.html"><img src="img/logo (1).png" alt="logo"></a>
+        </div>
+
+        <div id="links">
+
+            <ul>
+                <li><a href="default.asp">menu</a></li>
+                <li><a href="about.asp">produtos</a></li>
+                <li><a href="about.asp">terra</a></li>
+                <li><a href="news.asp">adubos</a></li>
+                <li><a href="contact.asp">ferramentas</a></li>
+                <li><a href="about.asp">meu carrinho</a></li>
+              </ul>
+
+        </div>
+
+        <!-- Quando aprendermos JavaScript, este será um menu drop down -->
+        <!-- <div id="dropDownMenu">
+            <a id = "menu"><img src="menu.png" alt="logo"></a>
+        </div>
+
+        <div id="login">
+            <a href="login.html">Faça Login ou cadastre-se</a>
+        </div>
+
+    </div> -->
+
+    <!-- ------------------- Fim header --------------------- -->
+    <!-- ------------------- login      --------------------- -->
   <h1>Login</h1>
   <div class="login">
+    <!-- formulário -->
     <form class="loginform" action="index.html" method="post">
       <div class="form lable-float">
         <input type="email" name="email" autocomplete="off" placeholder=" " id="form-input" required/>
@@ -33,6 +92,7 @@
       <div class="form form-button">
         <button type="submit" name="button">Entrar</button>
       </div>
+      <!-- links para paginas relacionadas a login -->
       <div class="links">
         <a href="#">Criar conta</a><br>
         <a href="#">Esqueci minha senha</a>

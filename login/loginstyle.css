@@ -2,6 +2,7 @@ body{
   margin: 0px;
   padding: 0px;
   background-color: #adc178;
+  width: 100%;
 }
 
 h1{
@@ -13,7 +14,8 @@ h1{
 .login{
   margin: auto;
   background-color: white;
-  width: 300px;
+  max-width: 400px;
+  width: 90vw;
   border: none;
   padding: 10px;
 }
@@ -42,6 +44,7 @@ h1{
 .loginform{
 }
 
+/* Campos com animação no preenchimento */
 .lable-float{
   position: relative;
   border: none;
@@ -68,6 +71,7 @@ h1{
   box-sizing: border-box;
 }
 
+/* Mudanças na hoora do preenchimento dos campos */
 .lable-float input:focus{
   border-bottom: solid 1px grey;
 }
@@ -82,16 +86,6 @@ h1{
   top:0;
 }
 
+@media only screen and (max-width: 1000px){
 
-
-
-#header{
-  margin: 0px;
-}
-
-#header iframe{
-  margin: 0px;
-  width: 100%;
-  height: auto;
-  border-style: none;
 }
