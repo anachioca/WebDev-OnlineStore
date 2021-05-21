@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="loginstyle.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Cadastre-se</title>
+    <link rel="icon" href="../img/logo (1).png">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../main.css" rel="stylesheet">
     <link href="../style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="loginstyle.css" rel="stylesheet">
+
   </head>
   <body>
     <!-- ------------------- Header --------------------- -->
 
     <nav class="navbar navbar-expand-lg navbar-custom">
 
-        <a class="navbar-brand logo" href="main.html"><img src="img/logo (1).png" class="img-responsive"alt="logo"></a>
+        <a class="navbar-brand logo" href="../main.html"><img src="../img/logo (1).png" class="img-responsive"alt="logo"></a>
 
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+      
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#"> Produtos <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../produtos.html"> Produtos <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Terra</a>
@@ -34,46 +42,18 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Meu Carrinho</a>
             </li>
-
+            
           </ul>
 
           <form class="form-inline">
-            <button class="btn btn-outline-success btn-custom" type="button">Entre ou Cadastre-se</button>
+            <button class="btn btn-outline-success btn-custom" type="button" onclick="location.href='login/login.html';">Entre ou Cadastre-se</button>
           </form>
 
         </div>
       </nav>
 
 
-    <!-- <div class="topnav">
-
-        <div id="logo">
-            <a id = "logo" href="main.html"><img src="img/logo (1).png" alt="logo"></a>
-        </div>
-
-        <div id="links">
-
-            <ul>
-                <li><a href="default.asp">menu</a></li>
-                <li><a href="about.asp">produtos</a></li>
-                <li><a href="about.asp">terra</a></li>
-                <li><a href="news.asp">adubos</a></li>
-                <li><a href="contact.asp">ferramentas</a></li>
-                <li><a href="about.asp">meu carrinho</a></li>
-              </ul>
-
-        </div>
-
-        <!-- Quando aprendermos JavaScript, este será um menu drop down -->
-        <!-- <div id="dropDownMenu">
-            <a id = "menu"><img src="menu.png" alt="logo"></a>
-        </div>
-
-        <div id="login">
-            <a href="login.html">Faça Login ou cadastre-se</a>
-        </div>
-
-    </div> -->
+    
 
     <!-- ------------------- Fim header --------------------- -->
     <!-- ------------------- login      --------------------- -->
@@ -95,10 +75,20 @@
       <!-- links para paginas relacionadas a login -->
       <div class="links">
         <a href="#">Criar conta</a><br>
-        <a href="#">Esqueci minha senha</a>
+        <a href="#">Esqueci minha senha</a><br>
+        <a href="../admin.html">Entrar como Administrador</a>
       </div>
     </form>
   </div>
   <div id="footer"></div>
+     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
+
+
   </body>
+
+
+
 </html>
