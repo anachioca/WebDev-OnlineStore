@@ -11,6 +11,7 @@
 
 ## Project Description:
 
+![diagrama](/img/web_diagram.png)
 
 ## Comments About the Code:
 
