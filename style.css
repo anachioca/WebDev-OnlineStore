@@ -1,4 +1,4 @@
-/* Stylesheet da navbar */
+/* Stylesheet da navbar - Navbar stylesheet*/
 
 
 
@@ -11,7 +11,7 @@
     background-image: none;
 }
 
-/* Alterando as cores usadas na navbar */
+/* Alterando as cores usadas na navbar - Changing navbar colors */
 
 .navbar-custom {
     color: #ADC178;
@@ -44,11 +44,11 @@
     border-color: #323232;
 }
 
-/* Alterando a cor do toggle da navbar */
+/* Alterando a cor do toggle da navbar - Changing navbar toggle color*/
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(173, 193, 120, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-  
+
 .custom-toggler.navbar-toggler {
     border-color: #ADC178;
-} 
+}

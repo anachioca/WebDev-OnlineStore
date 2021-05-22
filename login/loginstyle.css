@@ -43,7 +43,7 @@ h1{
 .loginform{
 }
 
-/* Campos com animação no preenchimento */
+/* Campos com animação - Input animation*/
 .lable-float{
   position: relative;
   border: none;

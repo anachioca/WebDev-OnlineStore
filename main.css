@@ -14,7 +14,7 @@
     color: #323232;
 }
 
-/* Tornando a imagem de fundo responsiva: */
+/* Tornando a imagem de fundo responsiva: - Turning background image responsive*/
 
 @media only screen and (max-width: 900px){
     #text {
