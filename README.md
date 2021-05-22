@@ -1,4 +1,4 @@
-# Projeto para a disciplina SCC0219 - Web Development
+#  SCC0219 - Web Development
 ## Online Shop - Plants and Gardening Tools
 
 ## Alunos:
