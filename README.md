@@ -1,18 +1,18 @@
-# Projeto para a disciplina SCC0219 - Desenvolvimento Web
-## Online Shop de plantas e acessórios de jardinagem
+# Projeto para a disciplina SCC0219 - Web Development
+## Online Shop - Plants and Gardening Tools
 
 ## Alunos:
 * Ana Laura Chioca Vieira - 9866531
 * Maria Fernando Lucio de Mello - 
 * Paulo Matana - 
 
-## Requisitos:
+## Requirements:
 
 
-## Descrição do Projeto:
+## Project Description:
 
 
-## Comentários sobre o código:
+## Comments About the Code:
 
 Para este projeto, utilizamos CSS3, HTML5 e Bootstrap.
 
@@ -20,13 +20,17 @@ Para este projeto, utilizamos CSS3, HTML5 e Bootstrap.
 
 Testes serão aplicados ao nosso projeto nas próximas etapas do projeto.
 
+## Test Results:
+
+
+
 ## Build Procedure:
 
 
-## Problemas:
+## Problemms:
 
 
 
-## Comentários finais:
+## Comments:
 
 
