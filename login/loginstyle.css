@@ -70,7 +70,7 @@ h1{
   box-sizing: border-box;
 }
 
-/* Mudanças na hoora do preenchimento dos campos */
+/* Mudanças na hora do preenchimento dos campos */
 .lable-float input:focus{
   border-bottom: solid 1px grey;
 }
@@ -83,8 +83,4 @@ h1{
 .lable-float input:focus + label{
   font-size: 12px;
   top:0;
-}
-
-@media only screen and (max-width: 1000px){
-
 }
