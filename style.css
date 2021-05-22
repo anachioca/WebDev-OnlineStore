@@ -1,20 +1,6 @@
-/* body {
-    margin: 0;
-    font-size: 100%;
-    font-family: sans-serif;
-    box-sizing: border-box;
-}
+/* Stylesheet da navbar */
 
-.topnav{
-    background-color: #323232;
-    position: fixed;
-    width: 100%;
-    height: 100px;
-}
 
-.topnav a {
-    text-decoration: none;
-} */
 
 .logo img {
     height: 80px;
@@ -25,16 +11,16 @@
     background-image: none;
 }
 
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
+/* Alterando as cores usadas na navbar */
+
+.navbar-custom {
     color: #ADC178;
 }
-/* change the link color */
+
 .navbar-custom .navbar-nav .nav-link {
     color: #ADC178;
 }
-/* change the color of active or hovered links */
+
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     color: #ADC178;
@@ -52,6 +38,13 @@
     border-color: #323232;
 }
 
+.btn-custom:active {
+    background-color: #323232;
+    color: #ADC178;
+    border-color: #323232;
+}
+
+/* Alterando a cor do toggle da navbar */
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(173, 193, 120, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -59,85 +52,3 @@
 .custom-toggler.navbar-toggler {
     border-color: #ADC178;
 } 
-
-/* #links {
-    width: 60%;
-    font-size: 125%;
-    float: left;
-    margin-top: 20px;
-}
-
-#links ul {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    width: 100%;
-    list-style-type: none;
-    flex-direction: row;
-}
-
-#links li {
-    display: block;
-    list-style-type: none;
-    flex: 0 1 auto;
-} */
-
-/* #links li a {
-    color:#ADC178;
-}
-
-
-#login {
-    text-align: center;
-    background-color: #ADC178;
-    float: right;
-    height: 60px;
-    width: 10%;
-    margin-top: 20px;
-    margin-right: 5%;
-    margin-left: 5%;
-    border-radius: 4px;
-}
-
-#login a {
-    color: #323232;
-    padding-top: 10px;
-    font-size: 100%;
-    float: right;
-    height: 80px;
-}
-
-#dropDownMenu {
-    visibility: hidden;
-    height: 0;
-    width: 0px;
-    margin: 0px;
-}
-
-#dropDownMenu img {
-    width: 0px;
-}
-
-@media only screen and (max-width: 1300px){
-    #links {
-        visibility: hidden;
-    }
-
-    #login {
-        visibility: hidden;
-    }
-
-    #dropDownMenu {
-        visibility: unset;
-        float: right;
-        height: 60px;
-        width: 10%;
-        margin-top: 25px;
-        margin-right: 5%;
-    }
-
-    #dropDownMenu img {
-        width: 60px;
-    }
-
-} */

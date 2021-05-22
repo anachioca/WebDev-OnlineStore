@@ -1,7 +1,7 @@
 #mainbox {
     width: 100vw;
-    height: calc(100vh - 100px);
-    background: url(web1.png) center bottom/100% 100% no-repeat fixed;
+    height: calc(100vh - 106px);
+    background: url(img/web1.png) center center/100% 100% no-repeat fixed;
 }
 
 #text {
@@ -14,9 +14,26 @@
     color: #323232;
 }
 
-@media only screen and (max-width: 1000px){
+/* Tornando a imagem de fundo responsiva: */
+
+@media only screen and (max-width: 900px){
     #text {
         font-size: 3em;
         margin-top: 30vh;
+    }
+
+    #mainbox {
+        background: url(img/web2.png) center bottom/100% 100% no-repeat fixed;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    #text {
+        font-size: 2em;
+        margin-top: 30vh;
+    }
+
+    #mainbox {
+        background: url(img/web3.png) center bottom/100% 100% no-repeat fixed;
     }
 }

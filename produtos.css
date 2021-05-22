@@ -12,12 +12,12 @@ body {
 }
 
 .img-hover {
-    opacity: 60%;
+    opacity: 100%;
     transition-duration: 2s;
 }
 
 .img-hover:hover {
-    opacity: 100%;
+    opacity: 90%;
     transition-duration: 2s;
 }
 
