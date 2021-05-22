@@ -14,11 +14,11 @@
 
 ## Comments About the Code:
 
-Para este projeto, utilizamos CSS3, HTML5 e Bootstrap.
+In this project, CSS3, HTML5 and Bootstrap were used.
 
 ## Test Plan:
 
-Testes serão aplicados ao nosso projeto nas próximas etapas do projeto.
+
 
 ## Test Results:
 
