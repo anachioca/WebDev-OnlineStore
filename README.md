@@ -25,7 +25,7 @@ The specific application for this kind business is the possibility to teach the 
 
 ## Project Description:
 
-![diagrama](../img/web_diagram.png)
+![diagrama](./img/web_diagram.png)
 
 ## Comments About the Code:
 
