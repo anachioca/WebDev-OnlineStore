@@ -25,7 +25,7 @@ The specific application for this kind business is the possibility to teach the 
 
 ## Project Description:
 
-![diagrama](..img/web_diagram (1).png)
+![diagrama](..img/web_diagram.png)
 
 ## Comments About the Code:
 
@@ -43,6 +43,6 @@ In this project, CSS3, HTML5 and Bootstrap were used.
 
 
 ## Problemms:
-  We had some problems to implemet a single navbar html file and use it in all the other pages. For now we create one navbar code for each page. 
+  We had some problems to implemet a single navbar html file and use it in all the other pages. For now we have created one navbar code for each page.
 
 ## Comments:
