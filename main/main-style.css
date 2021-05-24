@@ -23,7 +23,7 @@
     }
 
     #mainbox {
-        background: url(img/web2.png) center bottom/100% 100% no-repeat fixed;
+        background: url(../img/web2.png) center bottom/100% 100% no-repeat fixed;
     }
 }
 
@@ -34,6 +34,6 @@
     }
 
     #mainbox {
-        background: url(img/web3.png) center bottom/100% 100% no-repeat fixed;
+        background: url(../img/web3.png) center bottom/100% 100% no-repeat fixed;
     }
 }
