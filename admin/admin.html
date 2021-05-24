@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Lojinha</title>
-    <link rel="icon" href="img/logo (1).png">
+    <title>Admin Page</title>
+    <link rel="icon" href="../img/logo (1).png">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="main.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="../main/main-style.css" rel="stylesheet">
+    <link href="../main/nav-bar-style.css" rel="stylesheet">
+    <link href="adminstyle.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- ------------------- Header --------------------- -->
+      <!-- ------------------- Header --------------------- -->
 
     <nav class="navbar navbar-expand-lg navbar-custom">
 
-        <a class="navbar-brand logo" href="main.html"><img src="img/logo (1).png" class="img-responsive"alt="logo"></a>
+        <a class="navbar-brand logo" href="../main/main.html"><img src="../img/logo (1).png" class="img-responsive"alt="logo"></a>
 
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="produtos.html"> Produtos <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../produtos/produtos.html"> Produtos <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Terra</a>
@@ -46,27 +47,35 @@
           </ul>
 
           <form class="form-inline">
-            <button class="btn btn-outline-success btn-custom" type="button" onclick="location.href='login/login.html';">Entre ou Cadastre-se</button>
+            <button class="btn btn-outline-success btn-custom" type="button" onclick="location.href='../login/login.html';">Entre ou Cadastre-se</button>
           </form>
 
         </div>
       </nav>
 
+      <!-- ------------------- Fim do header - Header end--------------------- -->
+    <div id="center">
+        <!-- button 1 -->
+        <div>
+            <button type="button" class="button"><p>gerenciar produtos disponíveis</p></button>
+        </div> <br>
 
+        <!-- button 2 -->
+        <div>
+            <button type="button" class="button"><p>adicionar promoções</p></button>
+        </div> <br>
 
-    <!-- ------------------- Fim header - Header end --------------------- -->
-
-
-    <div id="mainbox">
-        <div id="text">
-            <p>Compre plantas sem sair de casa</p>
+        <!-- button 3 -->
+        <div>
+            <button type="button" class="button"><p>gerenciar usuários</p></button>
         </div>
     </div>
 
     <!-- bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-</body>
 
+</body>
 </html>
