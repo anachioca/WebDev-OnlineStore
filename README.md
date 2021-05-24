@@ -27,6 +27,11 @@ The specific application for this kind business is the possibility to teach the 
 
 ![diagrama](./img/web_diagram.png)
 
+#### Admin Page
+This page (admin.html) is shown when the administrator is logged in and now he can access new functionalities. <br>
+This user can manage the available products, manage the current promotions and manage the users (clientes) that are cadastrated on the plataform. <br>
+There he can normally access all the other pages, but, of course, has some of the privilegies told before.
+
 ## Comments About the Code:
 
 In this project, CSS3, HTML5 and Bootstrap were used.
