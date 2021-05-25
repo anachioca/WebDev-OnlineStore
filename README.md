@@ -32,6 +32,10 @@ This page (admin.html) is shown when the administrator is logged in and now he c
 This user can manage the available products, manage the current promotions and manage the users (clientes) that are cadastrated on the plataform. <br>
 There he can normally access all the other pages, but, of course, has some of the privilegies told before.
 
+#### Login Page
+In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
+If the user doesn't have a registerd account, from this page he can access the register page.
+ 
 ## Comments About the Code:
 
 In this project, CSS3, HTML5 and Bootstrap were used.
