@@ -25,9 +25,11 @@ The specific application for this kind business is the possibility to teach the 
 
 ## Project Description:
 
+The following diagram shows how our website works:
+
 ![diagrama](./img/web_diagram.png)
 
-### Navbar
+#### Navbar
 The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. 
 
 #### Admin Page
@@ -39,10 +41,10 @@ There he can normally access all the other pages, but, of course, has some of th
 In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
 If the user doesn't have a registerd account, from this page he can access the register page.
 
-### Products Page
+#### Products Page
 This page shows all the products available in our online shop. If the client clicks the "produtos" button in the navbar, they are redirected to this page. If they click another button, such as "acessórios" or "terra", they will be redirected to the same products page, but a filter will be applied (in the next milestone of the project). The products page was built using Bootstrap's cards and grid system.
 
-### Main Page
+#### Main Page
 The main page is responsive, and the background image changes according to the size of the screen.
  
 ## Comments About the Code:
