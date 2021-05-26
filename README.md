@@ -16,7 +16,7 @@ The specific application for this kind business is the possibility to teach the 
 
 * The admin record includes, at least: name, id, phone, email.
 * Each customer's record includes, at least: name, id, address, phone, email.
-* Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold.
+* Product/services records include, at least: name, id, photo, description, price, size, quantity (in stock), quantity sold.
 * Your store may sell products, services or both (you decide).
 * Selling Products (or services): Products are selected, their quantity chosen, and are included in a cart. Products are purchased using a credit card number (any number is accepted by the system). The quantity of product sold is subtracted from the quantity in stock and added to the quantity sold. Carts are emptied only on payment or by customers.
 * Product/Service Management: Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.
@@ -47,12 +47,6 @@ This page shows all the products available in our online shop. If the client cli
 
 #### Main Page
 The main page is responsive, and the background image changes according to the size of the screen.
-
-#### The following information will be saved in the server:
-
-* For the costumer: Name, address, ID, phone and email.
-* For the admin:  Name, ID, phone and email.
-* For each product: Name, ID, price, quantity available, size.
  
 ## Comments About the Code:
 
