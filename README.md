@@ -47,6 +47,9 @@ This page shows all the products available in our online shop. If the client cli
 
 #### Main Page
 The main page is responsive, and the background image changes according to the size of the screen.
+
+#### Other pages
+Some other pages will be made for this project, such as the cart page, which will list all the products chosen by the user, and the user page, in which the user will be able to change it's infos (name, password, etc).
  
 ## Comments About the Code:
 
