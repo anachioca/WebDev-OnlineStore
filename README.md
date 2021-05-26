@@ -31,10 +31,9 @@ The following diagram shows how our website works:
 The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. 
 
 #### Admin Page
-This page (admin.html) is shown when the administrator is logged in and now he can access new functionalities. <br>
-This user can manage the available products, manage the current promotions and manage the users (clientes) that are cadastrated on the plataform. <br>
+This page (admin.html) is shown when the administrator is logged in and now he can access new functionalities.
+This user can manage the available products, manage the current promotions and manage the users (clientes) that are cadastrated on the plataform. He can remove them and see their buying history.
 There he can normally access all the other pages, but, of course, has some of the privilegies told before.
-The "Bem vindo, Fulano" button will redirect the user to a page where they can edit their own infos (username, password, etc). This page has not yet been made.
 
 #### Login Page
 In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
