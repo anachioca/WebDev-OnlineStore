@@ -47,6 +47,12 @@ This page shows all the products available in our online shop. If the client cli
 
 #### Main Page
 The main page is responsive, and the background image changes according to the size of the screen.
+
+#### The following information will be saved in the server:
+
+* For the costumer: Name, address, ID, phone and email.
+* For the admin:  Name, ID, phone and email.
+* For each product: Name, ID, price, quantity available, size.
  
 ## Comments About the Code:
 
