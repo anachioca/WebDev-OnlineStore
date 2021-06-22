@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Login</title>
+    <title>Register</title>
     <link rel="icon" href="../img/logo.png">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,6 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="loginstyle.css" rel="stylesheet">
 
+    <script type="text/javascript" src=register.js>
+
+    </script>
   </head>
   <body>
     <!-- ------------------- Header --------------------- -->
@@ -57,10 +60,22 @@
 
     <!-- ------------------- Fim header - Header end--------------------- -->
     <!-- ------------------- login    --------------------- -->
-  <h1>Login</h1>
+  <h1>Registre-se</h1>
   <div class="login">
     <!-- Formulário - Forms -->
     <form class="loginform" action="index.html" method="post">
+      <div class="form lable-float">
+        <input type="text" name="name" autocomplete="off" placeholder=" " id="form-input" required/>
+        <label>Nome</label>
+      </div>
+      <div class="form lable-float">
+        <input type="text" name="last_name" autocomplete="off" placeholder=" " id="form-input" required/>
+        <label>Sobrenome</label>
+      </div>
+      <div class="form lable-float">
+        <input type="tel" name="phone" autocomplete="off" placeholder=" " id="phone" required/pattern="([0-9]{2})[0-9]{5}-[0-9]{4}">
+        <label>Telefone</label>
+      </div>
       <!-- Campo de email - Email input -->
       <div class="form lable-float">
         <input type="email" name="email" autocomplete="off" placeholder=" " id="form-input" required/>
@@ -71,13 +86,17 @@
         <input type="password" placeholder=" " name="password" required/>
         <label>Senha</label>
       </div>
+      <div class="form lable-float">
+        <input type="password" placeholder=" " name="password" required/>
+        <label>Repita a senha</label>
+      </div>
       <!-- Botão "Entrar" - Submit button -->
       <div class="form form-button">
         <button type="submit" name="button">Entrar</button>
       </div>
       <!-- links para paginas relacionadas a login - link to other pages -->
       <div class="links">
-        <a href="../login/register.html">Criar conta</a><br>
+        <a href="#">Criar conta</a><br>
         <a href="#">Esqueci minha senha</a><br>
       </div>
     </form>
