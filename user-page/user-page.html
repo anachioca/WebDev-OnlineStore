@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Perfil</title>
+    <link rel="icon" href="../img/logo.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../main/main-style.css" rel="stylesheet">
+    <link href="../main/nav-bar-style.css" rel="stylesheet">
+    <link href="userstyle.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+      <!-- ------------------- Header --------------------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+
+        <a class="navbar-brand logo" href="../main/main.html"><img src="../img/logo.png" class="img-responsive"alt="logo"></a>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../produtos/produtos.html"> Produtos <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Terra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Adubo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Ferramentas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../carrinho/carrinho.html">Meu Carrinho</a>
+            </li>
+
+          </ul>
+
+          <form class="form-inline">
+            <button class="btn btn-outline-success btn-custom" type="button" onclick="location.href='user-page.html';">Bem vindo, Fulano.</button>
+          </form>
+
+        </div>
+      </nav>
+
+
+<div class="container">
+      <div class="card text-center">
+        <img src="../img/logo.png" class="img-circle">
+        <h1>Fulano Silva</h1>
+
+        <p>Alameda Sempre Verde, São Carlos</p>
+        <button type="button" class="button" onclick="location.href='#';">Editar perfil</button>
+      </div>
+
+      <div class="card text-center">
+        <h1> Histórico de compras </h1>
+
+        <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price_">Preço</li>
+          <li class="quantity">Quantidade</li>
+          <li class="subtotal_">Valor</li>
+        </ul>
+      </div>
+
+        <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="http://localhost:8080/img/chiafroen-plant-pot-indoor-outdoor-light-pink__0951777_pe804357_s5.webp" alt="Vaso Rosa" class="product-frame">
+          </div>
+
+          <div class="product-details">
+            <h4 class="name-item"><strong>Vaso Rosa</strong></h4>
+            <p class="item-code">Código - 90293923821</p>
+          </div>
+
+        </div>
+
+        <div class="price">69.99</div>
+        <div class="quantity">
+          4
+        </div>
+
+        <div class="subtotal">279.96</div>
+      </div>
+
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="http://localhost:8080/img/jackfrukt-herb-scissors-beige__0953659_pe804255_s5.webp" alt="Tesoura Poda" class="product-frame">
+          </div>
+
+          <div class="product-details">
+            <h4 class="name-item"><strong>Tesoura Poda</strong></h4>
+            <p class="item-code">Código - 90293923882</p>
+          </div>
+
+        </div>
+
+        <div class="price">22.99</div>
+        <div class="quantity">
+          1
+        </div>
+
+        <div class="subtotal">22.99</div>
+      </div>
+      <button type="button" class="button" onclick="location.href='#';">Ver mais</button>
+    </div>
+
+      </div>
+
+      <div class="card text-center">
+        <h2>Suas informações</h2>
+        <table id="bandas">
+          <tbody>
+            <tr>
+              <td>
+                <h5>CEP</h5>
+              </td>
+              <td>
+                984789-093
+              </td>
+              <td>
+                <button type="button" class="edit" onclick="location.href='#';">editar</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h5>Endereço</h5>
+              </td>
+              <td>
+                Alameda Sempre Verde, São Carlos - SP
+              </td>
+              <td>
+                <button type="button" class="edit" onclick="location.href='#';">editar</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h5>Telefone Residencial</h5>
+              </td>
+              <td>
+                +55 (11) 2738-0921
+              </td>
+              <td>
+                <button type="button" class="edit" onclick="location.href='#';">editar</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h5>Celular</h5>
+              </td>
+              <td>
+                +55 (11) 91823-9123
+              </td>
+              <td>
+                <button type="button" class="edit" onclick="location.href='#';">editar</button>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                <h5>E-mail</h5>
+              </td>
+              <td>
+                email@verdadeiro.com
+              </td>
+              <td>
+                <button type="button" class="edit" onclick="location.href='#';">editar</button>
+              </td>
+            </tr>
+  
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    
+    <script src="userJS.js"></script>
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

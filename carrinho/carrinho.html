@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Meu Carrinho</title>
+    <link rel="icon" href="../img/logo.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../main/main-style.css" rel="stylesheet">
+    <link href="../main/nav-bar-style.css" rel="stylesheet">
+    <link href="carrinhostyle.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+      <!-- ------------------- Header --------------------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+
+        <a class="navbar-brand logo" href="../main/main.html"><img src="../img/logo.png" class="img-responsive"alt="logo"></a>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../produtos/produtos.html"> Produtos <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Terra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Adubo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Ferramentas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Meu Carrinho</a>
+            </li>
+
+          </ul>
+
+          <form class="form-inline">
+            <button class="btn btn-outline-success btn-custom" type="button" onclick="location.href='../user-page/user-page.html';">Bem vindo, Fulano.</button>
+          </form>
+
+        </div>
+      </nav>
+
+    <!-- ------------------- Usuário LOGADO --------------------- -->
+    
+    <main>
+    <div class="basket">
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price_">Preço</li>
+          <li class="quantity">Quantidade</li>
+          <li class="subtotal_">Subtotal</li>
+        </ul>
+      </div>
+
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="http://localhost:8080/img/chiafroen-plant-pot-indoor-outdoor-light-pink__0951777_pe804357_s5.webp" alt="Vaso Rosa" class="product-frame">
+          </div>
+
+          <div class="product-details">
+            <h1 class="name-item"><strong>Vaso Rosa</strong></h1>
+            <p class="item-description"><strong>Vasos, utensílios, cerâmica</strong></p>
+            <p class="item-code">Código - 90293923821</p>
+          </div>
+
+        </div>
+
+        <div class="price">69.99</div>
+        <div class="quantity">
+          <input type="number" value="4" min="1" class="quantity-field">
+        </div>
+
+        <div class="subtotal">279.96</div>
+        <div class="remove">
+          <button>Excluir</button>
+        </div>
+      </div>
+
+
+
+
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="http://localhost:8080/img/jackfrukt-herb-scissors-beige__0953659_pe804255_s5.webp" alt="Tesoura Poda" class="product-frame">
+          </div>
+
+          <div class="product-details">
+            <h1 class="name-item"><strong>Tesoura Poda</strong></h1>
+            <p class="item-description"><strong>Ferramentas</strong></p>
+            <p class="item-code">Código - 90293923882</p>
+          </div>
+
+        </div>
+
+        <div class="price">22.99</div>
+        <div class="quantity">
+          <input type="number" value="1" min="1" class="quantity-field">
+        </div>
+
+        <div class="subtotal">22.99</div>
+        <div class="remove">
+          <button>Excluir</button>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items">Meu carrinho</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Subtotal</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">302.95</div>
+
+        </div>
+
+        <div class="summary-delivery">
+          <select name="delivery-collection" class="summary-delivery-selection">
+              <option value="0" selected="selected">Selecione retirar na loja ou entrega</option>
+             <option value="collection">Retirar na Loja</option>
+             <option value="first-class">Entrega Sedex</option>
+             <option value="second-class">Entrega Correios</option>
+          </select>
+        </div>
+
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">302.95</div>
+        </div>
+
+        <div class="summary-checkout">
+          <button class="checkout-cta" >PAGAR</button>
+        </div>
+
+      </div>
+    </aside>
+  </main>
+    <!-- ------------------- Usuário NÃO logado --------------------- -->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="cartJS.js"></script>
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
