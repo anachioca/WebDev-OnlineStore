@@ -8,6 +8,7 @@ ul {
 }
 
 img {
+    position: relative;
     max-width:200px;
     max-height:200px;
     width: auto;
@@ -32,7 +33,9 @@ p {
 
 .card {
     background-color: FFFFFF;
-    width: 700px;
+    max-width: 900px;
+    position: relative;
+    width: 90%;
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -44,7 +47,7 @@ p {
 }
 
 .textinho {
-    text-align-last: left;  
+    text-align-last: left;
 }
 
 /*profile*/
@@ -177,6 +180,3 @@ p {
     text-decoration: underline;
     background-color: #fff;
 }
-
-
-
