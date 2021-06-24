@@ -17,6 +17,9 @@
     <script type="text/javascript" src=register.js>
 
     </script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", reg_setup);
+    </script>
   </head>
   <body>
     <!-- ------------------- Header --------------------- -->
@@ -123,13 +126,13 @@
           </div>
         </div>
         <div class="form lable-float">
-          <input type="text" name="complement" autocomplete="off" class="comp_" placeholder=" " required/>
+          <input type="text" name="complement" autocomplete="off" class="comp_" placeholder=" "/>
           <label>Complemento</label>
         </div>
 
         <!-- Campo de email - Email input -->
         <div class="form form-button">
-          <button type="button" name="button" class="btt-reg" id="button">Registrar</button>
+          <button type="button" name="button" class="btt-reg">Registrar</button>
         </div>
       </div>
     </form>
