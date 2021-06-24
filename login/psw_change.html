@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Register</title>
+    <title>Login</title>
     <link rel="icon" href="../img/logo.png">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="../main/main-style.css" rel="stylesheet">
     <link href="../main/nav-bar-style.css" rel="stylesheet">
-    <link href="../login/register.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="loginstyle.css" rel="stylesheet">
 
-    <script type="text/javascript" src=register.js>
-
-    </script>
   </head>
   <body>
     <!-- ------------------- Header --------------------- -->
@@ -61,76 +57,23 @@
 
     <!-- ------------------- Fim header - Header end--------------------- -->
     <!-- ------------------- login    --------------------- -->
-  <h1>Registre-se</h1>
-  <div class="register">
+  <h1>Recuperação de senha</h1>
+  <div class="login">
+    <p>Insira seu email cadastrado e enviaremos as intruções para mudança de senha.</p>
+    <!-- Formulário - Forms -->
     <form class="loginform" action="index.html" method="post">
-    <div class="side">
-
-      <h5>Informaçoes Pessoais</h5>
+      <!-- Campo de email - Email input -->
       <div class="form lable-float">
-        <input type="text" name="name" autocomplete="off" placeholder=" " required/>
-        <label>Nome</label>
-      </div>
-      <div class="form lable-float">
-        <input type="text" name="last_name" autocomplete="off" placeholder=" " required/>
-        <label>Sobrenome</label>
-      </div>
-      <div class="form lable-float">
-        <input type="tel" name="phone" autocomplete="off" placeholder="(99)9999-9999" id="phone" required/pattern="([0-9]{2})[0-9]{5}-[0-9]{4}">
-        <label>Telefone</label>
-      </div>
-      <div class="form lable-float">
-        <input type="email" name="email" autocomplete="off" placeholder=" " required/>
+        <input type="email" name="email" autocomplete="off" placeholder=" " id="form-input" required/>
         <label>Email</label>
       </div>
-      <!-- Campo de senha - password input -->
-      <div class="form lable-float">
-        <input type="password" placeholder=" " name="password" required/>
-        <label>Senha</label>
-      </div>
-      <div class="form lable-float">
-        <input type="password" placeholder=" " name="password" required/>
-        <label>Repita a senha</label>
-      </div>
-    </div>
-    <!-- Formulário - Forms -->
       <!-- Botão "Entrar" - Submit button -->
-      <div class="side">
-
-        <h5>Endereço</h5>
-        <div class="form lable-float">
-          <input type="text" placeholder=" " name="country" required/>
-          <label>País</label>
-        </div>
-        <div class="double_input">
-          <div class="form lable-float" id="city">
-            <input type="text" name="city" autocomplete="off" placeholder=" " required/>
-            <label>Cidade</label>
-          </div>
-          <div class="form lable-float" id="uf">
-            <input type="text" name="UF" autocomplete="off" placeholder=" " required/>
-            <label>UF</label>
-          </div>
-        </div>
-        <div class="double_input">
-          <div class="form lable-float" id="local">
-            <input type="text" name="local" autocomplete="off" placeholder=" " required/>
-            <label>Endereço</label>
-          </div>
-          <div class="form lable-float" id="num">
-            <input type="text" name="num" autocomplete="off" placeholder=" " required/>
-            <label>Numero</label>
-          </div>
-        </div>
-        <div class="form lable-float">
-          <input type="text" name="complement" autocomplete="off" placeholder=" " required/>
-          <label>Complemento</label>
-        </div>
-
-        <!-- Campo de email - Email input -->
-        <div class="form form-button">
-          <button type="submit" name="button" id="button">Registrar</button>
-        </div>
+      <div class="form form-button">
+        <button type="submit" name="button">Enviar</button>
+      </div>
+      <!-- links para paginas relacionadas a login - link to other pages -->
+      <div class="links">
+        <a href="../login/login.html">Fazer login</a><br>
       </div>
     </form>
   </div>
