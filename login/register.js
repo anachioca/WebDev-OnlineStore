@@ -21,9 +21,19 @@ function login_setup(){
 
 // from register
 function store() {
+	var name = document.getElementsByClassName('name_')
+	var	lastname = document.getElementsByClassName('lastname_')
+	var phone = document.getElementsByClassName('phone_')
+	var email = document.getElementsByClassName('email_')
+	var password = document.getElementsByClassName('password_')
+	var country = document.getElementsByClassName('country_')
+	var city = document.getElementsByClassName('city_')
+	var uf = document.getElementsByClassName('uf_')
+	var adress = document.getElementsByClassName('adress_')
+	var num = document.getElementsByClassName('number_')
+	var comp = document.getElementsByClassName('comp_')
+
 	if(password_[0].value == password_[1].value){
-		localStorage.setItem('email_', email_.value)
-		localStorage.setItem('password_', password_[0].value)
 		window.location.replace("login.html")
 	}else{
 		alert("As senhas estão diferente, por favor tente novamente")
