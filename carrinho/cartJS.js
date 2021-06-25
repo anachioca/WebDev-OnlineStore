@@ -59,6 +59,7 @@ function purchaseClicked () {
     }
     document.getElementsByClassName('final-value')[0].innerHTML = '0'
     document.getElementsByClassName('total-value')[0].innerHTML = '0'
+    window.location.replace("../pagamento/pagamento.html")
   }
 }
 

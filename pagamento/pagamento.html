@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Pagamento</title>
+    <link rel="icon" href="../img/logo.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../main/main-style.css" rel="stylesheet">
+    <link href="../main/nav-bar-style.css" rel="stylesheet">
+    <link href="../login/register.css" rel="stylesheet">
+    <link href="../login/loginstyle.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- ------------------- Header --------------------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+
+        <a class="navbar-brand logo" href="../main/main.html"><img src="../img/logo.png" class="img-responsive"alt="logo"></a>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../produtos/produtos.html"> Produtos <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Terra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Adubo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Ferramentas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../carrinho/carrinho.html">Meu Carrinho</a>
+            </li>
+
+          </ul>
+
+          <form class="form-inline">
+            <button class="btn btn-outline-success btn-custom" type="button" onclick="location.href='login.html';">Entre ou Cadastre-se</button>
+          </form>
+
+        </div>
+      </nav>
+
+
+
+
+    <!-- ------------------- Fim header - Header end--------------------- -->
+    <!-- ------------------- login    --------------------- -->
+  <h1>Pagamento</h1>
+  <div class="register">
+    <form class="loginform" action="index.html" method="post">
+    <div class="side">
+
+      <h5>Informações de Cobrança</h5>
+      <div class="form lable-float">
+        <input type="text" name="name" autocomplete="off" class="name_ show_placeholder" placeholder="Fulano da Silva" required/>
+        <label>Nome Completo</label>
+      </div>
+      <div class="form lable-float">
+        <input type="tel" name="phone" autocomplete="off" class="fone_ show_placeholder" placeholder="(99)9999-9999" required/>
+        <label>Telefone</label>
+      </div>
+      <div class="form lable-float">
+        <input type="email" name="email" autocomplete="off" class="email_ show_placeholder" placeholder="email@exemplo.com" required/>
+        <label>Email</label>
+      </div>
+      <div class="form lable-float">
+          <input type="text" class="country_ show_placeholder" name="country" placeholder="Brasil" required/>
+          <label>País</label>
+        </div>
+        <div class="double_input">
+          <div class="form lable-float" id="city">
+            <input type="text" name="city" autocomplete="off" class="city_ show_placeholder" placeholder="São Carlos" required/>
+            <label>Cidade</label>
+          </div>
+          <div class="form lable-float" id="uf">
+            <input type="text" name="UF" autocomplete="off" class="uf_ show_placeholder" placeholder="SP" required/>
+            <label>UF</label>
+          </div>
+        </div>
+        <div class="double_input">
+          <div class="form lable-float" id="local">
+            <input type="text" name="local" autocomplete="off" class="adress_ show_placeholder" placeholder="Vila Sesamo" required/>
+            <label>Endereço</label>
+          </div>
+          <div class="form lable-float" id="num">
+            <input type="text" name="num" autocomplete="off" class="number_ show_placeholder" placeholder="123" required/>
+            <label>Numero</label>
+          </div>
+        </div>
+        <div class="form lable-float">
+          <input type="text" name="complement" autocomplete="off" class="comp_ show_placeholder" placeholder="11a"/>
+          <label>Complemento</label>
+        </div>
+      
+    </div>
+    <!-- Formulário - Forms -->
+      <!-- Botão "Entrar" - Submit button -->
+      <div class="side">
+
+        <h5>Pagamento</h5>
+        <div class="form">
+          <label for="fname" class="accepted">Cartões Aceitos</label>
+          <!-- Cartões Aceitos -->
+            <div class="icon-container">
+              <span><i class="fa fa-cc-visa" style="color:navy;"></i></span>
+              <span><i class="fa fa-cc-amex" style="color:blue;"></i></span>
+              <span><i class="fa fa-cc-mastercard" style="color:red;"></i></span>
+              <span><i class="fa fa-cc-discover" style="color:orange;"></i></span>
+            </div>
+        </div>
+          <div class="form lable-float">
+            <input type="text" name="name_cart" autocomplete="off" class="name_cart show_placeholder" placeholder="Fulano Silva" required/>
+            <label>Nome no cartão</label>
+          </div>
+          <div class="form lable-float">
+            <input type="text" name="cart_num" autocomplete="off" class="cart_num show_placeholder" placeholder="111-222-333-444" required/>
+            <label>Número do cartão de crédito</label>
+          </div>
+          <div class="form lable-float">
+            <input type="text" name="venc" autocomplete="off" class="venc_ show_placeholder" placeholder="03/27" required/>
+            <label>Data de vencimento</label>
+          </div>
+        <div class="form lable-float">
+          <input type="text" name="cvv" autocomplete="off" class="cvv_ show_placeholder" placeholder="123"/>
+          <label>Código CVV</label>
+        </div>
+
+        <!-- Campo de email - Email input -->
+        <div class="form form-button">
+          <button type="button" name="button" class="btt-reg">Registrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- ------------------- Fim login - Login end --------------------- -->
+
+    <!-- bootstrap scripts -->
+    <script src="pagamentoJS.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+  </body>
+
+
+
+</html>
