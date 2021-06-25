@@ -1,5 +1,5 @@
 if (document.readyState == 'loading') {
-  document.addEventListener('DOMContentLoaded', ready)
+  document.addEventListener('DOMContentLoaded', ()=>{ready(); loadCart();})
 } else {
   ready()
 }
@@ -20,14 +20,66 @@ function ready() {
 
   // add to cart function
 
-
   // buy
   document.getElementsByClassName('checkout-cta')[0].addEventListener('click', purchaseClicked)
 }
 
+function loadCart(){
+ var products= localStorage.getObj("data_prod");
+ var cart = localStorage.getObj("cart");
+ var p;
+ for(let i of cart){
+   loadProduct(products[i]);
+ }
+}
+
+function loadProduct(p){
+  var product_list = document.getElementsByClassName("product-list")[0];
+  var basket_p = document.createElement('div');
+  basket_p.classList.add("basket-product")
+
+  var product_inf=`
+    <div class="item">
+      <div class="product-image">
+        <img src="http://localhost:8080${p.img}" alt="${p.name}" class="product-frame">
+      </div>
+
+      <div class="product-details">
+        <h1 class="name-item"><strong>${p.name}</strong></h1>
+        <p class="item-description"><strong>${p.cat}</strong></p>
+        <p class="item-code">Código - <span>${p.id}</span></p>
+      </div>
+
+    </div>
+
+    <div class="price">${p.price}</div>
+    <div class="quantity">
+      <input type="number" value="1" min="1" class="quantity-field">
+    </div>
+
+    <div class="subtotal">${p.price}</div>
+    <div class="remove">
+      <button>Excluir</button>
+    </div>
+    `;
+  basket_p.innerHTML = product_inf;
+  product_list.appendChild(basket_p);
+  ready();
+}
+
 
 function removeItem (event) {
+  var cart = localStorage.getObj("cart");
   var buttonClicked = event.target
+  var id = buttonClicked.parentElement.parentElement.childNodes[1].childNodes[3].childNodes[5].childNodes[1].innerHTML
+  id = parseInt(id);
+  for(let i=0; i<cart.length; i++){
+    if(cart[i] == id){
+      cart.splice(i, 1);
+      break;
+    }
+  }
+  localStorage.setObj("cart", cart)
   buttonClicked.parentElement.parentElement.remove()
   updateTotal()
 }
@@ -53,7 +105,7 @@ function purchaseClicked () {
     alert ('Por favor, selecione a forma de entrega.')
   } else {
     alert('Obrigado pela compra!')
-    var cartItens = document.getElementsByClassName('basket')[0]
+    var cartItens = document.getElementsByClassName('product-list')[0]
     while (cartItens.hasChildNodes()){
       cartItens.removeChild(cartItens.firstChild)
     }
@@ -65,11 +117,10 @@ function purchaseClicked () {
 
 
 function updateTotal() {
-  
+
   var p = document.getElementsByClassName('price')
-  console.log(p)
   if (p.length == 0) { // if there are no elements
-    var cartItens = document.getElementsByClassName('basket')[0]
+    var cartItens = document.getElementsByClassName('product-list')[0]
     while (cartItens.hasChildNodes()){
       cartItens.removeChild(cartItens.firstChild)
     }
@@ -77,24 +128,31 @@ function updateTotal() {
     document.getElementsByClassName('total-value')[0].innerHTML = '0'
   }
 
-  // arrumar o subtotal 
+  // arrumar o subtotal
   var subtotalArray = []
   for (var i = 0; i < p.length; i++) {
-    var priceItem = p[i].innerText
+    var priceItem = parseFloat(p[i].innerText)
     var quantity = document.getElementsByClassName('quantity-field')[i].value
-    var subtotal = 0 
+    var subtotal = 0
     subtotal = priceItem*quantity
-    subtotal = Math.round(subtotal * 100) / 100
-    document.getElementsByClassName('subtotal')[i].innerText = subtotal    
+    subtotal = parseFloat(subtotal).toFixed(2)
+    document.getElementsByClassName('subtotal')[i].innerText = subtotal
     subtotalArray.push(subtotal)
   }
 
   // arrumar o total final
   var total = 0
   for (var i = 0; i < subtotalArray.length; i++) {
-    total += subtotalArray[i]
-    total = Math.round(total * 100) / 100
-    document.getElementsByClassName('final-value')[0].innerHTML = total
-    document.getElementsByClassName('total-value')[0].innerHTML = total
+    total += parseFloat(subtotalArray[i])
   }
+  total = parseFloat(total).toFixed(2)
+  document.getElementsByClassName('final-value')[0].innerHTML = total
+  document.getElementsByClassName('total-value')[0].innerHTML = total
+}
+
+Storage.prototype.setObj = function(key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+}
+Storage.prototype.getObj = function(key) {
+    return JSON.parse(this.getItem(key))
 }
