@@ -92,8 +92,8 @@ function check() {
 		alert("Email ou senha incorretos");
 	}else{
 		alert("Bem vindo "+user.name+"!")
-		window.location.replace("../main/main.html")
-	}
+		//window.location.replace("../main/main.html")
+		window.history.back()	}
 
 }
 
