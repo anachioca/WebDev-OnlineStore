@@ -34,7 +34,7 @@ function checkButton () {
 
 function addToCart() {
   var cart = localStorage.getObj("cart");
-console.log('addToCart')
+  console.log('addToCart')
   var buttonClicked = event.target
   var id = buttonClicked.parentElement.id
   id = parseInt(id);

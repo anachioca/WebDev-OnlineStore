@@ -35,3 +35,4 @@ dataProd.push(new Product("12","Vaso Cimento","Vasos/Utensílios","69.99", "/img
 dataProd.push(new Product("13","Argila Expandida","Terra","25.99", "/img/odla-growing-media-clay-pellets__0637562_pe698398_s5.webp", ""));
 
 localStorage.setObj("data_prod", dataProd);
+localStorage.setObj("cart", []);
