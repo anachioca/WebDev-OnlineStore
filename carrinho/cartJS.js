@@ -25,12 +25,19 @@ function ready() {
 }
 
 function loadCart(){
- var products= localStorage.getObj("data_prod");
- var cart = localStorage.getObj("cart");
- var p;
- for(let i of cart){
+  var products= localStorage.getObj("data_prod");
+  var cart = localStorage.getObj("cart");
+  var p;
+  for(let i of cart){
    loadProduct(products[i]);
- }
+  }
+
+  var removeDiv = document.getElementById('blank')
+  removeDiv.remove()
+
+  //var buttonClicked = document.getElementsByClassName('remove-b')[0]
+  //buttonClicked.parentElement.parentElement.remove()
+  updateTotal()
 }
 
 function loadProduct(p){

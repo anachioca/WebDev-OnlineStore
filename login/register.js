@@ -100,5 +100,6 @@ function check() {
 function logout(){
 	localStorage.setObj("logged_user", {});
 	localStorage.setItem("user_status", 0);
+	localStorage.setItem("cart", []);
 	window.location.replace("../main/main.html")
 }

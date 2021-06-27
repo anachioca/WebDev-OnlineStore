@@ -32,13 +32,13 @@
               <a class="nav-link" href="../produtos/produtos.html"> Produtos <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../terra/produtos.html">Terra</a>
+              <a class="nav-link" href="#">Terra</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../vasos/produtos.html">Vasos</a>
+                <a class="nav-link" href="#">Adubo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../ferramentas/produtos.html">Ferramentas</a>
+                <a class="nav-link" href="#">Ferramentas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="carrinho.html">Meu Carrinho</a>
@@ -65,9 +65,26 @@
           <li class="subtotal_">Subtotal</li>
         </ul>
       </div>
-      <div class="product-list">
 
+      <div class="product-list">
+      <div class="basket-product blank" id="blank">
+        <div class="item blank">
+          <div class="product-image blank">
+          </div>
+
+          <div class="product-details blank">
+            <h1 class="name-item blank"><strong></strong></h1>
+            <p class="item-description blank"><strong></strong></p>
+            <p class="item-code blank"></p>
+          </div>
+
+        </div>
+      </div>
+      </div>
     </div>
+
+
+
     <aside>
       <div class="summary">
         <div class="summary-total-items">Meu carrinho</div>
@@ -79,7 +96,7 @@
 
         <div class="summary-delivery">
           <select name="delivery-collection" class="summary-delivery-selection">
-              <option value="0" selected="selected">Selecione a forma de entrega</option>
+              <option value="0" selected="selected">Selecione tipo de entrega</option>
              <option value="first-class">Entrega Sedex</option>
              <option value="second-class">Entrega Correios</option>
           </select>
@@ -93,8 +110,9 @@
         <div class="summary-checkout">
           <button class="checkout-cta" >PAGAR</button>
         </div>
-      </aside>
+
       </div>
+    </aside>
   </main>
     <!-- ------------------- Usuário NÃO logado --------------------- -->
 

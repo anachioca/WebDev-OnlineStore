@@ -28,22 +28,28 @@ function ready() {
   storedCity = results.city
   storedUF = results.uf
   storedAdd = results.adress
-  storedNumber = results.number
+  storedNumber = results.num
   storedComp = results.comp
   
-  // if (!document.getElementsByClassName('info_cadastrada')[0].checked)
-    document.getElementsByClassName('info_cadastrada')[0].addEventListener('click', putInfo)
-  // else
-  //   document.getElementsByClassName('info_cadastrada')[0].addEventListener('click', removeInfo)  
+  document.getElementsByClassName('info_cadastrada')[0].addEventListener('click', checkButton)
+
+  document.getElementsByClassName('btt-pay')[0].addEventListener('click', buyCheckout)
 
   // console.log(document.getElementsByClassName('info_cadastrada')[0].checked)  
+}
+
+function checkButton () {
+  if (document.getElementsByClassName('info_cadastrada')[0].checked){ //unchecked
+    putInfo()
+  } else {
+    removeInfo()
+  }
 }
 
 
 function putInfo (){
 
   document.getElementsByClassName('name_')[0].setAttribute('value', storedName)
-  //console.log('putInfo')
   //console.log(document.getElementsByClassName('name_')[0])
   document.getElementsByClassName('fone_')[0].setAttribute('value', storedPhone)
   document.getElementsByClassName('email_')[0].setAttribute('value', storedEmail)
@@ -52,22 +58,23 @@ function putInfo (){
   document.getElementsByClassName('uf_')[0].setAttribute('value', storedUF)
   document.getElementsByClassName('adress_')[0].setAttribute('value', storedAdd)
   document.getElementsByClassName('number_')[0].setAttribute('value', storedNumber)
-  document.getElementsByClassName('comp_')[0].setAttribute('value', storedComp)  
-
-  //ready()
+  document.getElementsByClassName('comp_')[0].setAttribute('value', storedComp)    
 }
 
-// function removeInfo() {
-//   console.log('removeInfo')
-//   document.getElementsByClassName('name_')[0].setAttribute('value', '')
-//   document.getElementsByClassName('fone_')[0].setAttribute('value', '')
-//   document.getElementsByClassName('email_')[0].setAttribute('value', '')
-//   document.getElementsByClassName('country_')[0].setAttribute('value', '')
-//   document.getElementsByClassName('city_')[0].setAttribute('value', '')
-//   document.getElementsByClassName('uf_')[0].setAttribute('value', '')
-//   document.getElementsByClassName('adress_')[0].setAttribute('value', '')
-//   document.getElementsByClassName('number_')[0].setAttribute('value', '')
-//   document.getElementsByClassName('comp_')[0].setAttribute('value', '') 
+function removeInfo() {
 
-//   ready()
-// }
+  document.getElementsByClassName('name_')[0].setAttribute('value', '')
+  document.getElementsByClassName('fone_')[0].setAttribute('value', '')
+  document.getElementsByClassName('email_')[0].setAttribute('value', '')
+  document.getElementsByClassName('country_')[0].setAttribute('value', '')
+  document.getElementsByClassName('city_')[0].setAttribute('value', '')
+  document.getElementsByClassName('uf_')[0].setAttribute('value', '')
+  document.getElementsByClassName('adress_')[0].setAttribute('value', '')
+  document.getElementsByClassName('number_')[0].setAttribute('value', '')
+  document.getElementsByClassName('comp_')[0].setAttribute('value', '') 
+}
+
+function buyCheckout () {
+  alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
+  window.location.replace("../main/main.html")
+}
