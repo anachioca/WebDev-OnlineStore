@@ -30,9 +30,9 @@ function ready() {
   storedAdd = results.adress
   storedNumber = results.num
   storedComp = results.comp
+
   
   document.getElementsByClassName('info_cadastrada')[0].addEventListener('click', checkButton)
-
   document.getElementsByClassName('btt-pay')[0].addEventListener('click', buyCheckout)
 
   // console.log(document.getElementsByClassName('info_cadastrada')[0].checked)  
@@ -75,6 +75,6 @@ function removeInfo() {
 }
 
 function buyCheckout () {
-  alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
-  window.location.replace("../main/main.html")
+    alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
+    window.location.replace("../main/main.html")
 }

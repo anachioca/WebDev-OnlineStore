@@ -111,7 +111,7 @@ function purchaseClicked () {
   } else if (sel[0].value == unselected) {
     alert ('Por favor, selecione a forma de entrega.')
   } else {
-    alert('Obrigado pela compra!')
+    alert('Você será redirecionado para a página de pagamento!')
     var cartItens = document.getElementsByClassName('product-list')[0]
     while (cartItens.hasChildNodes()){
       cartItens.removeChild(cartItens.firstChild)
