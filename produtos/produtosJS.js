@@ -12,6 +12,9 @@ Storage.prototype.getObj = function(key) {
 }
 
 
+var userStatus = localStorage.getItem('user_status')
+console.log(userStatus)
+
 function ready() {
   loadProducts()
 
@@ -128,7 +131,6 @@ function loadProduct(p){
             </div>
           </div>
           `;
-
 
   if (p.cuidados == "")
     basket_p.innerHTML = product_inf_sem_modal
