@@ -66,7 +66,7 @@ Our tests were made manually.
 
 ## Build Procedure:
 
-`python3 server.py`  
+Run `python3 server.py` in the same directory as the project's folders are.  
 Type `http://localhost:8080/` on your browser to access our main page.
 
 ## Problemms:
