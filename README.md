@@ -25,7 +25,11 @@ The specific application for this kind business is the possibility to teach the 
 
 The following diagram shows how our website works:
 
-![diagrama](./img/web_diagram3.png)
+Logged user:
+![diagramaLogado](img/userLogado.png)
+
+Unlogged used:
+![diagramaNLogado](img/nãoLogado.png)
 
 #### Navbar
 The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. We load the navbar onto each page using javascript. The navbar is presented in a different manner depending on the type of the user (administrator, client or unlogged).
@@ -75,6 +79,8 @@ We performed multiples tests for each funcionality of our system. To test the fu
 
 Run `python3 server.py` in the same directory as the project's folders are.  
 Type `http://localhost:8080/` on your browser to access our main page.
+
+**Important:** Do not access the website pages without loading the main page first. The main page contains important javascript code that loads the fake database that is used in the rest of the website. In the final version of this project we will use a real database so this problem will no longer exist.  If you follow the instructions above the first page loded will be the main, and the site will run correctly.
 
 
 ## Problems:
