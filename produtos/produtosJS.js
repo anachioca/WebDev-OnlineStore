@@ -83,12 +83,18 @@ function loadProduct(p){
     }
   }
 
+  var user_status = localStorage.getItem("user_status")
+
   var product_list = document.getElementsByClassName("row")[0];
   var basket_p = document.createElement('div');
   basket_p.classList.add("col-lg-3")
   basket_p.classList.add("col-md-4")
   basket_p.classList.add("col-sm-6")
 
+  var cartButton =`<button class="btn btn-primary btn-custom cart-add">${inCart}</button>`;
+  if(user_status == 2){
+    cartButton = ``;
+  }
   var product_inf_sem_modal=`
     <div class="card card-custom">
             <img class="card-img-top img-hover" src="${p.img}" alt="Card image cap">
@@ -96,18 +102,18 @@ function loadProduct(p){
               <h5 class="card-title">${p.name}</h5>
               <p class="card-text">R$ ${p.price}</p>
               <div id="${p.id}">
-                <button class="btn btn-primary btn-custom cart-add">${inCart}</button>
+                ${cartButton}
               </div>
     `;
 
-  var product_inf_com_modal = ` 
+  var product_inf_com_modal = `
   <div class="card card-custom">
             <img class="card-img-top img-hover" src="${p.img}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">${p.name}</h5>
               <p class="card-text">R$ ${p.price}</p>
               <div id="${p.id}">
-                <button class="btn btn-primary btn-custom cart-add">${inCart}</button>
+                ${cartButton}
               <!-- Modal -->
               <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#ModalMonstera">
                 Cuidados
