@@ -100,41 +100,22 @@ h5{
   color: gray;
 }
 
-#city{
-  position: relative;
-  width: 70%;
-}
-
-#uf{
-  position: relative;
-  width: 15%;
-}
-
-#local{
-  position: relative;
-  width: 70%;
-}
-
-#num{
-  position: relative;
-  width: 25%;
-}
 
 #button{
-  margin-top: 10px;
   position: relative;
 }
 
 .form-button{
+  margin-top: 35px;
   text-align: center;
 }
 
 .register{
-  display: flex;
   margin: auto;
   background-color: white;
   /*max-width: 700px;*/
-  width: 30%;
+  width: 70%;
+  position: relative;
   border: none;
   padding: 10px;
 }
@@ -142,7 +123,7 @@ h5{
 .side{
   margin-bottom: 1px;
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 .double_input{

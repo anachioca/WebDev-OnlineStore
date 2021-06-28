@@ -54,15 +54,6 @@ function loadNavBar () {
 	            <li class="nav-item active">
 	              <a class="nav-link" href="../produtos/produtos.html"> Produtos <span class="sr-only">(current)</span></a>
 	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="../terra/produtos.html">Terra</a>
-	            </li>
-	            <li class="nav-item">
-	                <a class="nav-link" href="../vasos/produtos.html">Vasos</a>
-	            </li>
-	            <li class="nav-item">
-	                <a class="nav-link" href="../ferramentas/produtos.html">Ferramentas</a>
-	            </li>
 	            ${li}
 	          </ul>
 
