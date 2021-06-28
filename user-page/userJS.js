@@ -13,10 +13,16 @@ var storedUF
 var storedAdd
 var storedNumber
 var storedComp
+var userStatus
 
 Storage.prototype.setObj = function(key, obj) {
   return this.setItem(key, JSON.stringify(obj))
 }
+Storage.prototype.getObj = function(key) {
+  return JSON.parse(this.getItem(key))
+}
+
+userStatus = localStorage.getItem("user_status")
 
 function ready() {
 
@@ -38,8 +44,13 @@ function ready() {
   putInfo()
 
   document.getElementsByClassName('logout')[0].addEventListener('click', logout)
+  if (userStatus != 2) {
+    document.getElementsByClassName('rmv-adm')[0].remove()
+  } else if (userStatus == 2) {
+    document.getElementsByClassName('rmv-adm')[0].addEventListener('click', noAdm)
+  }
 
-  // console.log(document.getElementsByClassName('info_cadastrada')[0].checked)  
+
 }
 
 function putInfo (){
@@ -59,4 +70,11 @@ function logout(){
   localStorage.setItem("user_status", 0);
   localStorage.setItem("cart", []);
   window.location.replace("../main/main.html")
+}
+
+
+function noAdm() {
+  localStorage.setItem('user_status', 1)
+  alert('Você não é mais administrador da loja.')
+  location.reload()
 }
