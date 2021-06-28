@@ -30,16 +30,20 @@ The following diagram shows how our website works:
 #### Navbar
 The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. We load the navbar onto each page using javascript. The navbar is presented in a different manner depending on the type of the user (administrator, client or unlogged).
 
-#### Admin Page
+#### Admin Page (and subsequent pages)
 This page is shown in the navbar when the administrator is logged in.
 In this page the admin can manage the available products or the users that are registered on the plataform. He can turn a normal user (client) into a new administrator. He could also add new products or edit the already existing ones.
 
 #### Login Page
 In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
-If the user doesn't have a registerd account, from this page he can access the register page.
+If the user doesn't have a registered account, he can access the register page from this page.
 
 #### Products Page
 This page shows all the products available in our online shop. The product cards are loaded in this page using javascript. All products are saved in local storage, and we load each of them separately. This way, if an administrator adds a new product or edits an already existing one, the products page will be automatically updated.
+This page also presents our group's functionality. For every product that belongs to the category "plant", there will be a button "cuidados" which opens a modal with instructions on how to care for your plant.
+
+#### Cart and Payments Page
+This page displays all the products selected by the user. It's possible to change the desired quantity of each product, as well as remove them. The sidebar display the current cost of all products in the cart and the shipment options. After the user is done with shopping, they can go to the payment page, where they'll fill in the forms with shipment and payment information. After the payment is concluded, the user is redirected to the main page. 
 
 #### Main Page
 The main page is responsive, and the background image changes according to the size of the screen.
@@ -56,10 +60,12 @@ Our tests were made manually.
 
 We performed multiples tests for each funcionality of our system. To test the functionalities it was necessary to use some type of database, in this project we used the local storage as a fake database, this way we could save Product and User objects and simulate a database API call inside the functionalities javascript code. 
 
-* Login systems is working well for all types of users. After loging in user is redirected to the correspondent page depending on it's type (admin or client). 
+* Some JavaScipt codes were made to automatically create fake database and load users and products into it. These scripts run when the user accesses the main page so if you run this version in your machine, it's important to open first the main page to guarantee that the fake database functionalities run correctly.
+* Login systems is working well for all types of users. After loging in user is redirected to the correspondent page depending on it's type (admin or client).
+* Users can loggout from their account. 
 * Registration page is working well. After registering the user's informations are saves in local storage and the user is redirected to the login page.
 * Administrator pages are working well. 
-  * The administrator can make other users in the local storage administrators. One administrator can not remove another administrator's role, but only their own.
+  * The administrator can make other users in the local storage administrators. One administrator can not remove another administrator's role, but only their own. Everything is working as expected.
   * The administrator can add new products or edit the ones already in local storage. Both actions are working well and the product infos are being saved in local storage correctly.
 * Clients can add products to the cart only once, and can change the desired quantity in the cart page. Once a product is already inside the cart, it cannot be added again, but only removed or have it's quantity changed.
 * The cart is interactive and displays the current sum of all the products in the shopping cart.
@@ -70,7 +76,8 @@ We performed multiples tests for each funcionality of our system. To test the fu
 Run `python3 server.py` in the same directory as the project's folders are.  
 Type `http://localhost:8080/` on your browser to access our main page.
 
+
 ## Problems:
- We had some problems to implemet a single navbar html file and use it in all the other pages, and now (2nd milestone) we are able to do this by using javascipt. 
+ We had some problems to implement a single navbar html file and use it in all the other pages, and now (2nd milestone) we are able to do this by using javascipt.
 
 ## Comments:
