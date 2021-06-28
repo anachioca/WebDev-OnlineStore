@@ -53,7 +53,7 @@ Some other pages will be made for this project, such as the cart page, which wil
  
 ## Comments About the Code:
 
-In this project, CSS3, HTML5 and Bootstrap were used.
+In this project, CSS3, HTML5, Bootstrap, JavaScript and Python (for the server) were used.
 
 ## Test Plan:
 
@@ -61,7 +61,15 @@ Our tests were made manually.
 
 ## Test Results:
 
- 
+We performed multiples tests for each funcionality of our system. To test the functionalities it was necessary to use some type of database, in this project we used the local storage as a fake database, this way we could save Product and User objects and simulate a database API call inside the functionalities javascript code. 
+
+* Login systems is working well for all types of users. After loging in user is redirected to the correspondent page depending on it's type (admin or client). 
+* Registration page is working well. After registering the user's informations are saves in local storage and the user is redirected to the login page.
+* Administrator pages are working well. 
+  * The administrator can make other users in the local storage administrators. One administrator can not remove another administrator's role, but only their own.
+  * The administrator can add new products or edit the ones already in local storage. Both actions are working well and the product infos are being saved in local storage correctly.
+* Clients can add products to the cart only once, and can change the desired quantity in the cart page. Once a product is already inside the cart, it cannot be added again, but only removed or have it's quantity changed.
+* The cart is interactive and displays the current sum of all the products in the shopping cart.
 
 
 ## Build Procedure:
@@ -70,6 +78,6 @@ Run `python3 server.py` in the same directory as the project's folders are.
 Type `http://localhost:8080/` on your browser to access our main page.
 
 ## Problemms:
-  We had some problems to implemet a single navbar html file and use it in all the other pages. For now we have created one navbar code for each page.
+ We had some problems to implemet a single navbar html file and use it in all the other pages, and now (2nd milestone) we are able to do this by using javascipt. 
 
 ## Comments:
