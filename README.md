@@ -31,6 +31,9 @@ Logged user:
 Unlogged user:
 ![diagramaNLogado](img/nãoLogado.png)
 
+Administrator user:
+![diagramaADMIN](img/ADMIN.png)
+
 #### Navbar
 The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. We load the navbar onto each page using javascript. The navbar is presented in a different manner depending on the type of the user (administrator, client or unlogged).
 
