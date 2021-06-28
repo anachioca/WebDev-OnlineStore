@@ -1,3 +1,4 @@
+//run teh ready functio when the page is completely load
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -15,6 +16,8 @@ var storedNumber
 var storedComp
 var userStatus
 
+
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
   return this.setItem(key, JSON.stringify(obj))
 }
@@ -24,6 +27,7 @@ Storage.prototype.getObj = function(key) {
 
 userStatus = localStorage.getItem("user_status")
 
+//function that setup all the responsive parts
 function ready() {
 
   var storage = window.localStorage;
@@ -40,7 +44,7 @@ function ready() {
   storedAdd = results.adress
   storedNumber = results.num
   storedComp = results.comp
-  
+
   putInfo()
 
   document.getElementsByClassName('logout')[0].addEventListener('click', logout)
@@ -53,6 +57,7 @@ function ready() {
 
 }
 
+//loads user information to the html
 function putInfo (){
 
   document.getElementsByClassName('name_')[0].innerHTML = storedName
@@ -64,7 +69,7 @@ function putInfo (){
   document.getElementsByClassName('number_')[0].innerHTML = storedNumber
 }
 
-
+//logout script
 function logout(){
   localStorage.setObj("logged_user", {});
   localStorage.setItem("user_status", 0);
@@ -72,7 +77,7 @@ function logout(){
   window.location.replace("../main/main.html")
 }
 
-
+//abdicate the adm status
 function noAdm() {
   localStorage.setItem('user_status', 1)
   alert('Você não é mais administrador da loja.')

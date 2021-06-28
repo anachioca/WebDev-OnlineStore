@@ -1,14 +1,16 @@
+//run the navbar function when the page is completely load
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ()=>{ready();})
   } else {
     ready()
 }
-  
+
 
 function ready(){
     loadUsers();
 }
 
+//load users onto page
 function loadUsers(){
     var users= localStorage.getObj("data_users");
 
@@ -20,6 +22,7 @@ function loadUsers(){
     makeButtons(users);
 }
 
+//load one user onto page
 function loadUser(user){
     var userList = document.getElementsByClassName("list-group")[0];
     var userItem = document.createElement('div');
@@ -44,6 +47,7 @@ function loadUser(user){
     userList.appendChild(userItem);
 }
 
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }
@@ -52,6 +56,7 @@ Storage.prototype.getObj = function(key) {
     return JSON.parse(this.getItem(key))
 }
 
+//set the action buttons
 function makeButtons(users){
     for(let i=0; i<users.length; i++){
         button = document.getElementsByClassName("btn-adm")[i]
@@ -59,6 +64,7 @@ function makeButtons(users){
     }
 }
 
+//turns a normal user into admin
 function makeAdmin(event){
     var users = localStorage.getObj("data_users");
     var buttonClicked = event.target

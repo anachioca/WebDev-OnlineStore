@@ -1,9 +1,11 @@
+//run the ready function when the page is completely load
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ()=>{ready(); })
 } else {
   ready()
 }
 
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }
@@ -15,6 +17,7 @@ Storage.prototype.getObj = function(key) {
 var userStatus = localStorage.getItem('user_status')
 console.log(userStatus)
 
+//function that setup all the responsive parts
 function ready() {
   loadProducts()
 
@@ -26,15 +29,17 @@ function ready() {
 
 }
 
+//add/remove to cart button function
 function checkButton () {
   var buttonClicked = event.target
-  if (buttonClicked.innerHTML == "+ carrinho"){ // precisa add
+  if (buttonClicked.innerHTML == "+ carrinho"){
     addToCart()
   } else {
     removeFromCart()
   }
 }
 
+//add to cart script
 function addToCart() {
   var cart = localStorage.getObj("cart");
   console.log('addToCart')
@@ -47,6 +52,7 @@ function addToCart() {
   buttonClicked.innerHTML = "- carrinho"
 }
 
+//remove from cart script
 function removeFromCart() {
   var cart = localStorage.getObj("cart");
   console.log('removeFromCart')
@@ -64,7 +70,7 @@ function removeFromCart() {
   buttonClicked.innerHTML = "+ carrinho"
 }
 
-
+//load all products onto the page
 function loadProducts(){
   var products= localStorage.getObj("data_prod");
   for(let i of products){
@@ -72,7 +78,7 @@ function loadProducts(){
   }
 }
 
-
+//load one product onto the page
 function loadProduct(p){
   var cart = localStorage.getObj("cart");
   var inCart = "+ carrinho"
@@ -96,6 +102,7 @@ function loadProduct(p){
   if(user_status == 2){
     cartButton = ``;
   }
+
   var product_inf_sem_modal=`
     <div class="card card-custom">
             <img class="card-img-top img-hover" src="${p.img}" alt="Card image cap">

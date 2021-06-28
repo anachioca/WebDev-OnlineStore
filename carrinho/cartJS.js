@@ -1,3 +1,4 @@
+//run the ready function and the loadCart function when the page is completely load
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ()=>{ready(); loadCart();})
 } else {
@@ -18,12 +19,10 @@ function ready() {
     input.addEventListener('change', quantityChanged) // add quantity
   }
 
-  // add to cart function
-
-  // buy
   document.getElementsByClassName('checkout-cta')[0].addEventListener('click', purchaseClicked)
 }
 
+//load products onto page
 function loadCart(){
   var products= localStorage.getObj("data_prod");
   var cart = localStorage.getObj("cart");
@@ -35,11 +34,10 @@ function loadCart(){
   var removeDiv = document.getElementById('blank')
   removeDiv.remove()
 
-  //var buttonClicked = document.getElementsByClassName('remove-b')[0]
-  //buttonClicked.parentElement.parentElement.remove()
   updateTotal()
 }
 
+//load one product onto page
 function loadProduct(p){
   var product_list = document.getElementsByClassName("product-list")[0];
   var basket_p = document.createElement('div');
@@ -74,7 +72,7 @@ function loadProduct(p){
   ready();
 }
 
-
+//remove a product from the cart
 function removeItem (event) {
   var cart = localStorage.getObj("cart");
   var buttonClicked = event.target
@@ -99,7 +97,7 @@ function quantityChanged (event) {
   updateTotal()
 }
 
-
+//run when purchase bustton is clicked
 function purchaseClicked () {
 
   // checar se foi selecionado um tipo de entrega
@@ -122,7 +120,7 @@ function purchaseClicked () {
   }
 }
 
-
+//update the tocal cost
 function updateTotal() {
 
   var p = document.getElementsByClassName('price')
@@ -157,6 +155,7 @@ function updateTotal() {
   document.getElementsByClassName('total-value')[0].innerHTML = total
 }
 
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }

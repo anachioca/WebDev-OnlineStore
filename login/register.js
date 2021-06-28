@@ -1,7 +1,7 @@
 var email_
 var password_
 
-
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
 	return this.setItem(key, JSON.stringify(obj))
 }
@@ -9,6 +9,7 @@ Storage.prototype.getObj = function(key) {
 	return JSON.parse(this.getItem(key))
 }
 
+//setup register functionality
 function reg_setup(){
 	email_ = document.getElementsByClassName('email_')[0] // from register
 	password_ = document.getElementsByClassName('password_') // from register
@@ -17,6 +18,7 @@ function reg_setup(){
 	button.addEventListener("click", store)
 }
 
+//setup login functionality
 function login_setup(){
 	email_ = document.getElementsByClassName('emailL')[0] // from register
 	password_ = document.getElementsByClassName('passwordL')[0] // from register
@@ -26,7 +28,7 @@ function login_setup(){
 	button.addEventListener("click", check)
 }
 
-// from register
+//stores the user information in database
 function store() {
 	//get the input data
 	var name = document.getElementsByClassName('name_')[0].value
@@ -97,6 +99,7 @@ function check() {
 
 }
 
+//logout script
 function logout(){
 	localStorage.setObj("logged_user", {});
 	localStorage.setItem("user_status", 0);

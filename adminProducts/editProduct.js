@@ -1,9 +1,11 @@
+//run the navbar function when the page is completely load
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ()=>{ready();})
   } else {
     ready()
 }
 
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }
@@ -13,32 +15,32 @@ Storage.prototype.getObj = function(key) {
 }
 
 var dataProd = localStorage.getObj('data_prod')
-console.log(dataProd)
 var idTarget = localStorage.getItem('idProdEdit')
 
+//setup page functionalities
 function ready(){
-    // console.log("oi"); 
+
     if (idTarget >= 0) {
         checkID()
         addInfo()
         document.getElementsByClassName('btt-save')[0].addEventListener('click', saveChanges)
     } else  {
-        // addProd()
         document.getElementsByClassName('btt-save')[0].addEventListener('click', addProd)
     }
 }
 
-var prodID 
+var prodID
 var prodName
-var prodCat 
+var prodCat
 var prodPrice
 var prodCuidados
-var prodImg 
-var cont = 0    
+var prodImg
+var cont = 0
 
+//find the product by id
 function checkID() {
     for (var i of dataProd) {
-        console.log(i)  
+        console.log(i)
         if (i.id == idTarget) {
             console.log('if')
             prodID = i.id
@@ -46,14 +48,14 @@ function checkID() {
             prodCat = i.cat
             prodPrice = i.price
             prodCuidados = i.cuidados
-            prodImg = i.img            
+            prodImg = i.img
             break;
         }
         cont++
     }
 }
 
-
+//load product info onto the page
 function addInfo() {
     document.getElementsByClassName('name_')[0].setAttribute('value', prodName)
     document.getElementsByClassName('price_')[0].setAttribute('value', prodPrice)
@@ -62,12 +64,8 @@ function addInfo() {
     document.getElementsByClassName('cuidados_')[0].setAttribute('value', prodCuidados)
 }
 
+//save the product changes into database
 function saveChanges() {
-    // console.log(document.getElementsByClassName('name_')[0].value)
-    // console.log(document.getElementsByClassName('price_')[0].value)
-    // console.log(document.getElementsByClassName('cat_')[0].value)
-    // console.log(document.getElementsByClassName('img_')[0].value)
-    // console.log(document.getElementsByClassName('cuidados_')[0].value)
 
     dataProd[cont].name = document.getElementsByClassName('name_')[0].value
     dataProd[cont].price = document.getElementsByClassName('price_')[0].value
@@ -80,8 +78,8 @@ function saveChanges() {
     window.location.replace('adminProd.html')
 }
 
+//add a new product into database
 function addProd() {
-    // console.log('oi')
     var last = parseInt(dataProd[dataProd.length-1].id)
     var next = parseInt(last+1)
 

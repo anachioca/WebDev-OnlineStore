@@ -1,9 +1,11 @@
+//run the navbar function when the page is completely load
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ()=>{loadNavBar(); })
 } else {
   loadNavBar()
 }
 
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }
@@ -11,19 +13,19 @@ Storage.prototype.getObj = function(key) {
     return JSON.parse(this.getItem(key))
 }
 
-
+//loads the navbar onto html
 function loadNavBar () {
 	var userStatus = localStorage.getItem('user_status')
 	var loggedUser = localStorage.getObj('logged_user')
 	if (userStatus == 0) { // não logado
 		// se não tiver logado e apertar meu carirnho, vai pra pagina de login
-		
+
 		li = `<li class="nav-item">
 	          <a class="nav-link" href="../login/login.html">Meu Carrinho</a>
 					</li>`
 
 		button = `<button class="btn btn-outline-success btn-custom" type="button" onclick="location.href='../login/login.html';">Entre ou Cadastre-se</button>`
-		
+
 
 	} else if (userStatus == 1) { // logado
 		li = `<li class="nav-item">

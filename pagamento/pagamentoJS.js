@@ -1,3 +1,4 @@
+//run teh ready functio when the page is completely load
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -14,6 +15,7 @@ var storedAdd
 var storedNumber
 var storedComp
 
+//function that setup all the responsive parts
 function ready() {
 
   var storage = window.localStorage;
@@ -34,10 +36,9 @@ function ready() {
 
   document.getElementsByClassName('info_cadastrada')[0].addEventListener('click', checkButton)
   document.getElementsByClassName('btt-pay')[0].addEventListener('click', buyCheckout)
-
-  // console.log(document.getElementsByClassName('info_cadastrada')[0].checked)
 }
 
+//button functionality
 function checkButton () {
   if (document.getElementsByClassName('info_cadastrada')[0].checked){ //unchecked
     putInfo()
@@ -46,11 +47,10 @@ function checkButton () {
   }
 }
 
-
+//load user info
 function putInfo (){
 
   document.getElementsByClassName('name_')[0].setAttribute('value', storedName)
-  //console.log(document.getElementsByClassName('name_')[0])
   document.getElementsByClassName('fone_')[0].setAttribute('value', storedPhone)
   document.getElementsByClassName('email_')[0].setAttribute('value', storedEmail)
   document.getElementsByClassName('country_')[0].setAttribute('value', storedCountry)
@@ -61,6 +61,7 @@ function putInfo (){
   document.getElementsByClassName('comp_')[0].setAttribute('value', storedComp)
 }
 
+//remove user info
 function removeInfo() {
 
   document.getElementsByClassName('name_')[0].setAttribute('value', '')
@@ -74,6 +75,7 @@ function removeInfo() {
   document.getElementsByClassName('comp_')[0].setAttribute('value', '')
 }
 
+//Checkout script
 function buyCheckout () {
     alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
     localStorage.setItem("cart", [])

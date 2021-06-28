@@ -1,3 +1,4 @@
+//Product calss
 class Product{
   constructor(id, name, cat, price, img, cuidados){
     this.id = id;
@@ -9,6 +10,7 @@ class Product{
   }
 }
 
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }
@@ -17,7 +19,7 @@ Storage.prototype.getObj = function(key) {
 }
 
 var users = localStorage.getItem("data_prod")
-
+//if the fake database doesn't exists creates it
 if (users == null || users == "") {
   var dataProd = [];
 
@@ -40,5 +42,6 @@ if (users == null || users == "") {
   localStorage.setObj("data_prod", dataProd);
 }
 
+//initializates cart
 var cart = localStorage.getItem("cart");
 if(cart == null || cart == "") localStorage.setObj("cart", []);

@@ -1,3 +1,4 @@
+//run the navbar function when the page is completely load
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ()=>{ready();})
   } else {
@@ -7,20 +8,20 @@ if (document.readyState == 'loading') {
 
 function ready(){
     loadProds();
-    // console.log("oi"); 
 }
 
+//load products onto page
 function loadProds(){
     var prods  = localStorage.getObj("data_prod");
     var num=0;
     for(let i of prods){
-        //console.log(i);
         loadProd(i);
     }
 
     makeButtons(prods);
 }
 
+//load one product onto page
 function loadProd(p){
     var prodList = document.getElementsByClassName("list-group")[0];
     var prodItem = document.createElement('div');
@@ -46,6 +47,7 @@ function loadProd(p){
     prodList.appendChild(prodItem);
 }
 
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }
@@ -54,6 +56,7 @@ Storage.prototype.getObj = function(key) {
     return JSON.parse(this.getItem(key))
 }
 
+//set the action buttons
 function makeButtons(prods){
     for(let i=0; i<prods.length; i++){
       button = document.getElementsByClassName("btn-prod-rm")[i]
@@ -63,13 +66,13 @@ function makeButtons(prods){
       button = document.getElementsByClassName("btn-prod-ed")[i]
         button.addEventListener("click", editProd)
     }
-    
+
     button = document.getElementsByClassName("btn-prod-add")[0]
     button.addEventListener("click", addProd)
 }
 
+//remove one product from database
 function removeProd(event){
-  // console.log("oi");
     var prods = localStorage.getObj("data_prod");
     var buttonClicked = event.target
     var idTarget = buttonClicked.parentElement.parentElement.childNodes[1].innerHTML
@@ -89,9 +92,8 @@ function removeProd(event){
     location.reload()
 }
 
-
+//product edition script
 function editProd(event) {
-    // console.log('oi')
     var buttonClicked = event.target
     var idTarget = buttonClicked.parentElement.parentElement.childNodes[1].innerHTML
     idTarget = idTarget.trim();
@@ -100,6 +102,7 @@ function editProd(event) {
     window.location.replace("editProduct.html")
 }
 
+//product addition script
 function addProd(event) {
     var buttonClicked = event.target
     var idTarget = -1

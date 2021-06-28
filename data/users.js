@@ -1,9 +1,11 @@
+//run the ready functio when the page is completely load
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
 } else {
   ready()
 }
 
+//user class
 class User{
   constructor(name, lastname, phone, email, password, country, city, uf, adress, num, comp, perm){
     this.name = name;
@@ -22,6 +24,7 @@ class User{
   }
 }
 
+//functions to set and get objects onto the localStorage
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 }
@@ -29,9 +32,10 @@ Storage.prototype.getObj = function(key) {
     return JSON.parse(this.getItem(key))
 }
 
+
 function ready(){
   data_users = localStorage.getObj("data_users");
-
+//if the fake database doesn't exists creates it
   if(data_users == null){
     var data_users = [];
     var adm = new User("Ana Laura","Mello", "123", "admin@admin.com", "321321", "Brasil", "São Carlos", "SP", "Rua Luiz Vaz de Toledo Piza", "222", "", 2)
@@ -47,6 +51,7 @@ function ready(){
     localStorage.setObj("data_users", data_users);
   }
 
+  //initializates user local information
   var user_setup = localStorage.getItem("user_status");
 
   if(user_setup == null || user_setup == ""){
