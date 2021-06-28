@@ -28,7 +28,7 @@ The following diagram shows how our website works:
 Logged user:
 ![diagramaLogado](img/userLogado.png)
 
-Unlogged used:
+Unlogged user:
 ![diagramaNLogado](img/nãoLogado.png)
 
 #### Navbar
