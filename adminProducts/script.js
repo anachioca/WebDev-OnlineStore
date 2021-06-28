@@ -7,7 +7,7 @@ if (document.readyState == 'loading') {
 
 function ready(){
     loadProds();
-    console.log("oi");
+    // console.log("oi"); 
 }
 
 function loadProds(){
@@ -59,10 +59,17 @@ function makeButtons(prods){
       button = document.getElementsByClassName("btn-prod-rm")[i]
 	    button.addEventListener("click", removeProd)
     }
+    for(let i=0; i<prods.length; i++){
+      button = document.getElementsByClassName("btn-prod-ed")[i]
+        button.addEventListener("click", editProd)
+    }
+    
+    button = document.getElementsByClassName("btn-prod-add")[0]
+    button.addEventListener("click", addProd)
 }
 
 function removeProd(event){
-  console.log("oi");
+  // console.log("oi");
     var prods = localStorage.getObj("data_prod");
     var buttonClicked = event.target
     var idTarget = buttonClicked.parentElement.parentElement.childNodes[1].innerHTML
@@ -80,4 +87,22 @@ function removeProd(event){
     prods.splice(count, 1)
     localStorage.setObj("data_prod", prods)
     location.reload()
+}
+
+
+function editProd(event) {
+    // console.log('oi')
+    var buttonClicked = event.target
+    var idTarget = buttonClicked.parentElement.parentElement.childNodes[1].innerHTML
+    idTarget = idTarget.trim();
+    console.log(idTarget);
+    localStorage.setItem('idProdEdit', idTarget)
+    window.location.replace("editProduct.html")
+}
+
+function addProd(event) {
+    var buttonClicked = event.target
+    var idTarget = -1
+    localStorage.setItem('idProdEdit', idTarget)
+    window.location.replace("editProduct.html")
 }

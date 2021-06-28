@@ -91,6 +91,7 @@ function loadProduct(p){
   basket_p.classList.add("col-md-4")
   basket_p.classList.add("col-sm-6")
 
+
   var cartButton =`<button class="btn btn-primary btn-custom cart-add">${inCart}</button>`;
   if(user_status == 2){
     cartButton = ``;
@@ -115,11 +116,11 @@ function loadProduct(p){
               <div id="${p.id}">
                 ${cartButton}
               <!-- Modal -->
-              <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#ModalMonstera">
+              <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#Modal${p.name}">
                 Cuidados
               </button>
               </div>
-              <div class="modal fade" id="ModalMonstera" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="Modal${p.name}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">

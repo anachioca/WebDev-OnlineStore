@@ -31,8 +31,14 @@ body {
     color: #323232;
 }
 
-.btn-custom:hover {
+.btn-prod-add {
     background-color: #323232;
-    color: #ADC178;
     border-color: #323232;
+    color: #ADC178;   
+    margin-bottom: 10px;
+}
+
+.btn-prod-add:hover {
+    background-color: #ADC178;
+    color: #323232;
 }
