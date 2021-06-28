@@ -25,7 +25,7 @@ The specific application for this kind business is the possibility to teach the 
 
 The following diagram shows how our website works:
 
-![diagrama](./img/web_diagram3.png)
+![diagrama](.img/nãoLogado (1).png)
 
 #### Navbar
 The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. We load the navbar onto each page using javascript. The navbar is presented in a different manner depending on the type of the user (administrator, client or unlogged).
