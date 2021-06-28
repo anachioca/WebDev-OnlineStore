@@ -28,28 +28,21 @@ The following diagram shows how our website works:
 ![diagrama](./img/web_diagram3.png)
 
 #### Navbar
-The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. 
+The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. We load the navbar onto each page using javascript. The navbar is presented in a different manner depending on the type of the user (administrator, client or unlogged).
 
 #### Admin Page
-This page (admin.html) is shown when the administrator is logged in and now he can access new functionalities.
-This user can manage the available products, manage the current promotions and manage the users (clientes) that are cadastrated on the plataform. He can remove them and see their buying history.
-There he can normally access all the other pages, but, of course, has some of the privilegies told before.
-
-#### Admin Users Page
-In this page the administrator can make other users admins as well. 
+This page is shown in the navbar when the administrator is logged in.
+In this page the admin can manage the available products or the users that are registered on the plataform. He can turn a normal user (client) into a new administrator. He could also add new products or edit the already existing ones.
 
 #### Login Page
 In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
 If the user doesn't have a registerd account, from this page he can access the register page.
 
 #### Products Page
-This page shows all the products available in our online shop. If the client clicks the "produtos" button in the navbar, they are redirected to this page. If they click another button, such as "acessórios" or "terra", they will be redirected to the same products page, but a filter is applied. The products page was built using Bootstrap's cards and grid system.
+This page shows all the products available in our online shop. The product cards are loaded in this page using javascript. All products are saved in local storage, and we load each of them separately. This way, if an administrator adds a new product or edits an already existing one, the products page will be automatically updated.
 
 #### Main Page
 The main page is responsive, and the background image changes according to the size of the screen.
-
-#### Other pages
-Some other pages will be made for this project, such as the cart page, which will list all the products chosen by the user, the user page, in which the user will be able to change it's infos (name, password, etc), and the admin page, in which the admin of the website can manage the products and users.
  
 ## Comments About the Code:
 
@@ -77,7 +70,7 @@ We performed multiples tests for each funcionality of our system. To test the fu
 Run `python3 server.py` in the same directory as the project's folders are.  
 Type `http://localhost:8080/` on your browser to access our main page.
 
-## Problemms:
+## Problems:
  We had some problems to implemet a single navbar html file and use it in all the other pages, and now (2nd milestone) we are able to do this by using javascipt. 
 
 ## Comments:
