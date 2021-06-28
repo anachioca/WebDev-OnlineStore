@@ -37,11 +37,11 @@ function ready(){
     var adm = new User("Ana Laura","Mello", "123", "admin@admin.com", "321321", "Brasil", "São Carlos", "SP", "Rua Luiz Vaz de Toledo Piza", "222", "", 2)
     data_users.push(adm);
 
-    var u = new User("Ana Laura","Mello", "123", "1@1", "123", "Brasil", "São Carlos", "SP", "Rua Luiz Vaz de Toledo Piza", "222", "", 1)
+    var u = new User("Paulo","Teresa", "11929102812", "1@1", "123", "Brasil", "Piracicaba", "SP", "Rua Rosa", "111", "", 1)
     data_users.push(u)
-    var u = new User("Ana Laura","Mello", "123", "2@2", "123", "Brasil", "São Carlos", "SP", "Rua Luiz Vaz de Toledo Piza", "222", "", 1)
+    var u = new User("Zé","Silva", "11929102843", "2@2", "123", "Brasil", "São José do Rio Preto", "SP", "Rua Azul", "222", "", 1)
     data_users.push(u)
-    var u = new User("Ana Laura","Mello", "123", "3@3", "123", "Brasil", "São Carlos", "SP", "Rua Luiz Vaz de Toledo Piza", "222", "", 1)
+    var u = new User("João","Santos", "11929108112", "3@3", "123", "Brasil", "Guarujá", "SP", "Rua Amarela", "333", "", 1)
     data_users.push(u)
 
     localStorage.setObj("data_users", data_users);
