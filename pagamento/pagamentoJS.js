@@ -31,11 +31,11 @@ function ready() {
   storedNumber = results.num
   storedComp = results.comp
 
-  
+
   document.getElementsByClassName('info_cadastrada')[0].addEventListener('click', checkButton)
   document.getElementsByClassName('btt-pay')[0].addEventListener('click', buyCheckout)
 
-  // console.log(document.getElementsByClassName('info_cadastrada')[0].checked)  
+  // console.log(document.getElementsByClassName('info_cadastrada')[0].checked)
 }
 
 function checkButton () {
@@ -58,7 +58,7 @@ function putInfo (){
   document.getElementsByClassName('uf_')[0].setAttribute('value', storedUF)
   document.getElementsByClassName('adress_')[0].setAttribute('value', storedAdd)
   document.getElementsByClassName('number_')[0].setAttribute('value', storedNumber)
-  document.getElementsByClassName('comp_')[0].setAttribute('value', storedComp)    
+  document.getElementsByClassName('comp_')[0].setAttribute('value', storedComp)
 }
 
 function removeInfo() {
@@ -71,10 +71,11 @@ function removeInfo() {
   document.getElementsByClassName('uf_')[0].setAttribute('value', '')
   document.getElementsByClassName('adress_')[0].setAttribute('value', '')
   document.getElementsByClassName('number_')[0].setAttribute('value', '')
-  document.getElementsByClassName('comp_')[0].setAttribute('value', '') 
+  document.getElementsByClassName('comp_')[0].setAttribute('value', '')
 }
 
 function buyCheckout () {
     alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
+    localStorage.setItem("cart", [])
     window.location.replace("../main/main.html")
 }
