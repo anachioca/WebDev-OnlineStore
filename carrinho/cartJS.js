@@ -46,7 +46,7 @@ function loadProduct(p){
   var product_inf=`
     <div class="item">
       <div class="product-image">
-        <img src="http://localhost:8080${p.img}" alt="${p.name}" class="product-frame">
+        <img src="${p.img}" alt="${p.name}" class="product-frame">
       </div>
 
       <div class="product-details">
