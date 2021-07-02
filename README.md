@@ -45,7 +45,17 @@ Password: 321321
 
 #### Login Page
 In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
-If the user doesn't have a registered account, he can access the register page from this page.
+If the user doesn't have a registered account, he can access the register page from this page.<br>
+
+##### Login as Admin (mocked)
+Login: admin@admin.com <br>
+Password: 321321
+
+##### Login as regular user
+Login: 1@1 <br>
+Password: 123<br>
+There are others mocked users, and you can see all of them inside the "data" folder > users.js. <br>
+Or, you can register yourself and login as a regular user.
 
 #### Products Page
 This page shows all the products available in our online shop. The product cards are loaded in this page using javascript. All products are saved in local storage, and we load each of them separately. This way, if an administrator adds a new product or edits an already existing one, the products page will be automatically updated.
