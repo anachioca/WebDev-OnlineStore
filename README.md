@@ -40,8 +40,6 @@ The navbar appears in every page of our application, and was made using Bootstra
 #### Admin Page (and subsequent pages)
 This page is shown in the navbar when the administrator is logged in.
 In this page the admin can manage the available products or the users that are registered on the plataform. He can turn a normal user (client) into a new administrator. He could also add new products or edit the already existing ones.
-Login: admin@admin.com
-Password: 321321
 
 #### Login Page
 In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
