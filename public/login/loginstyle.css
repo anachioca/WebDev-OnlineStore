@@ -1,0 +1,84 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: #adc178;
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  color: #323232;
+}
+
+
+.login{
+  margin: auto;
+  background-color: white;
+  max-width: 400px;
+  width: 90vw;
+  border: none;
+  padding: 10px;
+}
+
+.form{
+  margin: 20px;
+}
+
+
+.form-button button{
+  background-color: #DDE5B6;
+  border-style: solid;
+  color: #323232;
+}
+
+.links{
+  margin: 10px;
+  text-align: right;
+}
+
+.links a{
+  color: #adc178;
+  text-decoration: none;
+}
+
+/* Campos com animação - Input animation*/
+.lable-float{
+  position: relative;
+  border: none;
+  height: 35px;
+}
+
+.lable-float input{
+  border:none;
+  border-bottom: solid 1px lightgrey;
+  outline: none;
+  background: none;
+  position: relative;
+  top: 15px;
+  width: 100%;
+}
+
+.lable-float label{
+  pointer-events: none;
+  transition: all .1s linear;
+  color: grey;
+  top: 15px;
+  left: 0px;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+/* Mudanças na hora do preenchimento dos campos */
+.lable-float input:focus{
+  border-bottom: solid 1px grey;
+}
+
+.lable-float input::placeholder{
+  color: transparent;
+}
+
+.lable-float input:not(:placeholder-shown) + label,
+.lable-float input:focus + label{
+  font-size: 12px;
+  top:0;
+}

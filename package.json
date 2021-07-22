@@ -1,0 +1,23 @@
+{
+  "name": "Lojinha_de_plantas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "debug": "^4.3.2",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "mongoose": "^5.13.3",
+    "parser": "^0.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

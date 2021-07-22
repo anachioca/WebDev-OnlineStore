@@ -1,0 +1,52 @@
+/* Stylesheet da navbar - Navbar stylesheet*/
+
+.logo img {
+    height: 80px;
+}
+
+.navbar-custom {
+    background-color: #323232;
+    background-image: none;
+}
+
+/* Alterando as cores usadas na navbar - Changing navbar colors */
+
+.navbar-custom {
+    color: #ADC178;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #ADC178;
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ADC178;
+}
+
+.btn-custom {
+    background-color: #ADC178;
+    border-color: #ADC178;
+    color: #323232;
+}
+
+.btn-custom:hover {
+    background-color: #323232;
+    color: #ADC178;
+    border-color: #323232;
+}
+
+.btn-custom:active {
+    background-color: #323232;
+    color: #ADC178;
+    border-color: #323232;
+}
+
+/* Alterando a cor do toggle da navbar - Changing navbar toggle color*/
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(173, 193, 120, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #ADC178;
+}
