@@ -5,6 +5,7 @@ const controller = require('../controllers/users')
 router.put('/', controller.put);
 router.put('/:id', controller.att);
 router.get('/', controller.get);
+router.post('/login', controller.getLogin);
 router.delete('/:id', controller.rm);
 
 module.exports = router;

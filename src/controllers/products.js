@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
+const validationContract = require('../validators/fluent-validator');
 
 exports.get = (req, res, next)=>{
   var cat = req.body.cat;
@@ -44,6 +45,19 @@ exports.att = (req, res, next)=>{
 };
 
 exports.put = (req, res, next)=>{
+
+  let contract = new validationContract();
+  contract.hasMinLen(req.body.name, 3, 'O nome do produto deve conter no minímo 3 caracteres.');
+  contract.hasMinLen(req.body.cat, 3, 'A categoria do produto deve conter no minímo 3 caracteres.');
+  contract.isRequired(req.body.name, 'É preciso inserir o nome do produto.');
+  contract.isRequired(req.body.price, 'É preciso inserir o preço do produto.');
+  contract.isRequired(req.body.quant, 'É preciso inserir a quantidade do produto em estoque.');
+
+  if (!contract.isValid()) {
+    res.status(400).send(contract.errors()).end();
+    return;
+  }
+
   var product = new Product();
   product.name = req.body.name;
   product.cat = req.body.cat;

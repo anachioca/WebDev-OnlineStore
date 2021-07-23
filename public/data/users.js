@@ -20,7 +20,6 @@ class User{
     this.num = num;
     this.comp = comp;
     this.perm = perm;
-    this.hist = [];
   }
 }
 
