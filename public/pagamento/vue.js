@@ -21,44 +21,44 @@ var app = new Vue({
             this.errors = [];
 
             if(this.nomeCompleto) {
-            
+
                 if(!(/^[A-Za-z\s]+$/.test(this.nomeCompleto))){
                     this.errors.push('Nome não deve conter números ou caractéres especiais');
-                } 
+                }
 
             }
 
             if(this.UF) {
-            
+
                 if(!/^[A-Za-z\s]+$/.test(this.UF) || this.UF.length != 2){
                     this.errors.push('UF deve estar no formato XX');
-                } 
+                }
 
             }
 
             if(this.telefone) {
-            
+
                 if(/[a-zA-Z]/g.test(this.telefone)){
                     this.errors.push('Telefone não deve conter letras');
-                } 
+                }
 
             }
 
             if(this.nomeCartao) {
-            
+
                 if(!(/^[A-Za-z\s]+$/.test(this.nomeCompleto))){
                     this.errors.push('Nome não deve conter números ou caractéres especiais');
-                } 
+                }
 
             }
 
             if(this.cartao) {
 
                 var regExp = /[a-zA-Z]/g;
-            
+
                 if(regExp.test(this.telefone)){
                     this.errors.push('Telefone não deve conter letras');
-                } 
+                }
 
             }
 
@@ -83,10 +83,10 @@ var app = new Vue({
             if(this.CVV) {
 
                 var regExp = /[a-zA-Z]/g;
-            
+
                 if(regExp.test(this.telefone) || this.CVV.length != 3){
                     this.errors.push('CVV inválido');
-                } 
+                }
 
             }
 

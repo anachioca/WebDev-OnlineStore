@@ -9,14 +9,6 @@ Storage.prototype.getObj = function(key) {
     return JSON.parse(this.getItem(key))
 }
 
-//setup register functionality
-function reg_setup(){
-	email_ = document.getElementsByClassName('email_')[0] // from register
-	password_ = document.getElementsByClassName('password_') // from register
-
-	button = document.getElementsByClassName("btt-reg")[0]
-	button.addEventListener("click", store)
-}
 
 //setup login functionality
 function login_setup(){
@@ -26,51 +18,6 @@ function login_setup(){
 	button = document.getElementsByClassName("btt-log")[0]
 	console.log(button);
 	button.addEventListener("click", check)
-}
-
-//stores the user information in database
-async function store() {
-
-	//get the input data
-	var _name = document.getElementsByClassName('name_')[0].value
-	var	_lastname = document.getElementsByClassName('lastname_')[0].value
-	var _phone = document.getElementsByClassName('phone_')[0].value
-	var _email = document.getElementsByClassName('email_')[0].value
-	var _password = document.getElementsByClassName('password_')
-	var _country = document.getElementsByClassName('country_')[0].value
-	var _city = document.getElementsByClassName('city_')[0].value
-	var _uf = document.getElementsByClassName('uf_')[0].value
-	var _adress = document.getElementsByClassName('adress_')[0].value
-	var _num = document.getElementsByClassName('number_')[0].value
-	var _comp = document.getElementsByClassName('comp_')[0].value
-
-	//check if the passwords are the same
-	if(password_[0].value == password_[1].value){
-		//add the user to the data base
-		var user = new User(_name, _lastname, _phone, _email, _password[0].value, _country, _city, _uf, _adress, _num, _comp, 1);
-		
-		try {
-			let data = JSON.stringify(user);
-			let fetch_data = {
-				method:"PUT",
-				body: data,
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			}
-			let resp = await fetch('http://localhost:3000/users', fetch_data)
-			if(resp.status == 201)
-				alert("Usuário cadastrado com sucesso!");
-
-		} catch(e){
-			console.log(e);
-		}
-		//redirect to login page
-		window.location.replace("login.html")
-	}else{
-		alert("As senhas estão diferentes, por favor tente novamente")
-	}
-
 }
 
 // check in login
@@ -89,6 +36,9 @@ async function check() {
 			email: userEmail,
 			password: userPw
 		}
+    console.log(login.email);
+    console.log(login.password);
+
 		let data = JSON.stringify(login);
 		let fetch_data = {
 			method:"POST",
@@ -97,13 +47,21 @@ async function check() {
 				'Content-Type': 'application/json'
 			}
 		}
-		let resp = await fetch('http://localhost:3000/login', fetch_data)
-		var user = resp.body.user;
-		localStorage.setObj("logged_user", user);
-		localStorage.setItem("user_status", user.perm);
-
-		alert("Bem vindo "+user.name+"!")
-		window.location.replace("../main/main.html")
+		let resp = await fetch('http://localhost:3000/users/login', fetch_data)
+    resp  = await resp.json();
+    console.log(resp);
+    if(resp.erro == 0){
+		  var user = resp.user;
+      console.log(user);
+		  localStorage.setObj("logged_user", user);
+		  localStorage.setItem("user_status", user.perm);
+      alert("Bem vindo "+user.name+"!")
+      window.location.replace("../main/main.html")
+    }else if(resp.erro == 1){
+      alert("Senha incorreta")
+    }else{
+      alert("Usuário não encontrado")
+    }
 
 	} catch(e){
 		alert("Erro! Tente novamente.")

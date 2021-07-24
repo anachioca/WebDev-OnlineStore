@@ -18,12 +18,13 @@ var userStatus = localStorage.getItem('user_status')
 console.log(userStatus)
 
 //function that setup all the responsive parts
-function ready() {
-  loadProducts()
+async function ready() {
+  await loadProducts()
 
   var addButton = document.getElementsByClassName('cart-add')
   for (var i = 0; i < addButton.length; i++) {
     var button = addButton[i]
+    console.log(i);
     button.addEventListener('click', checkButton)
   }
 
@@ -45,7 +46,6 @@ function addToCart() {
   console.log('addToCart')
   var buttonClicked = event.target
   var id = buttonClicked.parentElement.id
-  id = parseInt(id);
   cart.push(id)
   localStorage.setObj("cart", cart)
 
@@ -58,7 +58,6 @@ function removeFromCart() {
   console.log('removeFromCart')
   var buttonClicked = event.target
   var id = buttonClicked.parentElement.id
-  id = parseInt(id);
   for(let i=0; i<cart.length; i++){
     if(cart[i] == id){
       cart.splice(i, 1);
@@ -71,19 +70,27 @@ function removeFromCart() {
 }
 
 //load all products onto the page
-function loadProducts(){
-  var products= localStorage.getObj("data_prod");
+async function loadProducts(){
+  let fetch_data = {
+    method:"GET",
+  }
+
+  let resp = await fetch('http://localhost:3000/products', fetch_data)
+  resp  = await resp.json();
+
+  var products = resp;
+  console.log(products);
   for(let i of products){
     loadProduct(i);
   }
 }
 
 //load one product onto the page
-function loadProduct(p){
-  var cart = localStorage.getObj("cart");
+async function loadProduct(p){
+  var cart = await localStorage.getObj("cart");
   var inCart = "+ carrinho"
   for (let i of cart) {
-    if (i == p.id) {
+    if (i == p._id) {
       inCart = "- carrinho"
       break;
     }
@@ -109,7 +116,7 @@ function loadProduct(p){
             <div class="card-body">
               <h5 class="card-title">${p.name}</h5>
               <p class="card-text">R$ ${p.price}</p>
-              <div id="${p.id}">
+              <div id="${p._id}">
                 ${cartButton}
               </div>
     `;
@@ -120,7 +127,7 @@ function loadProduct(p){
             <div class="card-body">
               <h5 class="card-title">${p.name}</h5>
               <p class="card-text">R$ ${p.price}</p>
-              <div id="${p.id}">
+              <div id="${p._id}">
                 ${cartButton}
               <!-- Modal -->
               <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#Modal${p.name}">
