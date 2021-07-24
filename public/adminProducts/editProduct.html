@@ -27,19 +27,27 @@
     <!-- ------------------- Fim header - Header end--------------------- -->
     <!-- ------------------- login    --------------------- -->
   <br><h1>Editar/Adicionar informações do produto</h1><br>
-  <div class="register">
+  <div id="app" class="register">
     <form class="loginform" action="index.html" method="post">
       <div class="side">
+
+        <p class = "errors" v-if="errors.length">
+          <b>Por favor, corrija os seguintes erros:</b>
+          <ul>
+            <li v-for="error in errors">{{ error }}</li>
+          </ul>
+        </p>
+
         <div class="form lable-float">
-          <input type="text" name="name" autocomplete="off" class="name_ show_placeholder" placeholder="Produto" required/>
+          <input type="text" name="name" autocomplete="off" class="name_ show_placeholder" placeholder="Produto" v-model="nome" required/>
           <label>Nome</label>
         </div>
         <div class="form lable-float">
-          <input type="text" name="preco" autocomplete="off" class="price_ show_placeholder" placeholder="50.00" required/>
+          <input type="text" name="preco" autocomplete="off" class="price_ show_placeholder" placeholder="50.00" v-model="preco" required/>
           <label>Preço</label>
         </div>
         <div class="form lable-float">
-          <input type="text" name="categoria" autocomplete="off" class="cat_ show_placeholder" placeholder="Ferramentas" required/>
+          <input type="text" name="categoria" autocomplete="off" class="cat_ show_placeholder" placeholder="Ferramentas" v-model="categoria" required/>
           <label>Categoria</label>
         </div>
       </div>
@@ -50,7 +58,7 @@
           <label>Imagem</label>
         </div>
         <div class="form lable-float">
-          <input type="text" name="cuidados" autocomplete="off" class="cuidados_ show_placeholder" placeholder="Cuidados" required/>
+          <input type="text" name="cuidados" autocomplete="off" class="cuidados_ show_placeholder" placeholder="Cuidados" v-model="cuidados" required/>
           <label>Cuidados</label>
         </div>
 
@@ -66,6 +74,9 @@
     <!-- bootstrap scripts -->
     <script src="../controller/nav-bar.js"></script>
     <script src="editProduct.js"></script>
+
+    <script src = "https://unpkg.com/vue"></script>
+    <script src = "vue.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
