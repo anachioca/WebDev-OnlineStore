@@ -19,7 +19,6 @@ var app = new Vue({
         /* Função que checa se o formulário está corretamente preenchido */
         checkForm: function(e){
             this.errors = [];
-            console.log("oii");
 
             if(this.nomeCompleto) {
             
@@ -37,7 +36,7 @@ var app = new Vue({
 
             }
 
-            if(this.num) {
+            if(this.telefone) {
             
                 if(/[a-zA-Z]/g.test(this.telefone)){
                     this.errors.push('Telefone não deve conter letras');
