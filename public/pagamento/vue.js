@@ -21,13 +21,72 @@ var app = new Vue({
             this.errors = [];
             console.log("oii");
 
-            /* Caso o usuário tenha preenchido o telefone, checa se foi preenchido corretamente */
-            if(this.telefone) {
+            if(this.nomeCompleto) {
+            
+                if(!(/^[A-Za-z\s]+$/.test(this.nomeCompleto))){
+                    this.errors.push('Nome não deve conter números ou caractéres especiais');
+                } 
+
+            }
+
+            if(this.UF) {
+            
+                if(!/^[A-Za-z\s]+$/.test(this.UF) || this.UF.length != 2){
+                    this.errors.push('UF deve estar no formato XX');
+                } 
+
+            }
+
+            if(this.num) {
+            
+                if(/[a-zA-Z]/g.test(this.telefone)){
+                    this.errors.push('Telefone não deve conter letras');
+                } 
+
+            }
+
+            if(this.nomeCartao) {
+            
+                if(!(/^[A-Za-z\s]+$/.test(this.nomeCompleto))){
+                    this.errors.push('Nome não deve conter números ou caractéres especiais');
+                } 
+
+            }
+
+            if(this.cartao) {
 
                 var regExp = /[a-zA-Z]/g;
             
                 if(regExp.test(this.telefone)){
                     this.errors.push('Telefone não deve conter letras');
+                } 
+
+            }
+
+            if(this.valCartao) {
+
+                var data = this.valCartao.split("/");
+
+                if (data[0] > 12 || data[0] < 1){
+                    this.errors.push('Validade do cartão inválida.');
+                }
+
+                if (data[1] < 21){
+                    this.errors.push('Validade do cartão inválida.');
+                }
+
+                if (!this.nascimento.includes("/") || this.nascimento.length != 5){
+                    this.errors.push('Validade do cartão deve estar no formato MM/AA');
+                }
+
+            }
+
+            if(this.CVV) {
+
+                var regExp = /[a-zA-Z]/g;
+            
+                if(regExp.test(this.telefone) || this.CVV.length != 3){
+                    this.errors.push('CVV inválido');
                 } 
 
             }
