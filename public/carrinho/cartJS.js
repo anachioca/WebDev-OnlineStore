@@ -24,25 +24,35 @@ function ready() {
 
 //load products onto page
 function loadCart(){
-  var products= localStorage.getObj("data_prod");
   var cart = localStorage.getObj("cart");
   var p;
   for(let i of cart){
-   loadProduct(products[i]);
+   loadProduct(i);
   }
 
   var removeDiv = document.getElementById('blank')
   removeDiv.remove()
 
   updateTotal()
+
+}
+
+async function getProd(id){
+  let fetch_data = {
+    method:"GET",
+  }
+  let resp = await fetch('/products/'+id, fetch_data)
+  resp  = await resp.json();
+  return resp;
 }
 
 //load one product onto page
-function loadProduct(p){
+async function loadProduct(id){
   var product_list = document.getElementsByClassName("product-list")[0];
   var basket_p = document.createElement('div');
   basket_p.classList.add("basket-product")
 
+  var p = await getProd(id);
   var product_inf=`
     <div class="item">
       <div class="product-image">
@@ -52,7 +62,7 @@ function loadProduct(p){
       <div class="product-details">
         <h1 class="name-item"><strong>${p.name}</strong></h1>
         <p class="item-description"><strong>${p.cat}</strong></p>
-        <p class="item-code">Código - <span>${p.id}</span></p>
+        <p class="item-code">Código - <span>${p._id}</span></p>
       </div>
 
     </div>
@@ -67,9 +77,11 @@ function loadProduct(p){
       <button>Excluir</button>
     </div>
     `;
-  basket_p.innerHTML = product_inf;
-  product_list.appendChild(basket_p);
-  ready();
+  if(p!=null){
+    basket_p.innerHTML = product_inf;
+    product_list.appendChild(basket_p);
+    ready()
+  }
 }
 
 //remove a product from the cart
@@ -77,7 +89,6 @@ function removeItem (event) {
   var cart = localStorage.getObj("cart");
   var buttonClicked = event.target
   var id = buttonClicked.parentElement.parentElement.childNodes[1].childNodes[3].childNodes[5].childNodes[1].innerHTML
-  id = parseInt(id);
   for(let i=0; i<cart.length; i++){
     if(cart[i] == id){
       cart.splice(i, 1);

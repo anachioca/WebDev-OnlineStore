@@ -19,6 +19,15 @@ exports.get = (req, res, next)=>{
   }
 };
 
+exports.getById = (req, res, next)=>{
+  Product.findById(req.params.id).then(data=>{
+    res.status(200).send(data);
+  }).catch(e=>{
+    res.status(400).send(e);
+  });
+};
+
+
 exports.rm = (req, res, next)=>{
   Product.findByIdAndRemove(req.params.id).then(x=>{
     res.status(200).send({message: 'Produto removido'});

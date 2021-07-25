@@ -10,16 +10,24 @@ function ready(){
     loadUsers();
 }
 
+
+
 //load users onto page
-function loadUsers(){
-    var users= localStorage.getObj("data_users");
+async function loadUsers(){
+  let fetch_data = {
+    method:"GET",
+  }
 
-    for(let i of users){
-        console.log(i);
-        loadUser(i);
-    }
+  let resp = await fetch('/users', fetch_data)
+  resp  = await resp.json();
+  var users= resp;
 
-    makeButtons(users);
+  for(let i of users){
+    console.log(i);
+    loadUser(i);
+  }
+
+  makeButtons(users);
 }
 
 //load one user onto page

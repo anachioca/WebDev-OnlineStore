@@ -11,14 +11,19 @@ function ready(){
 }
 
 //load products onto page
-function loadProds(){
-    var prods  = localStorage.getObj("data_prod");
-    var num=0;
-    for(let i of prods){
-        loadProd(i);
+async function loadProds(){
+    let fetch_data = {
+      method:"GET",
     }
 
-    makeButtons(prods);
+    let resp = await fetch('/products', fetch_data)
+    resp  = await resp.json();
+    console.log(resp);
+    var products = resp;
+    for(let i of products){
+      loadProd(i);
+    }
+    makeButtons(products);
 }
 
 //load one product onto page
@@ -33,9 +38,10 @@ function loadProd(p){
 
     var listItem = `<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                          <strong>${p.id}</strong>
+                          <strong>${p._id}</strong>
                           <spam>${p.name}</spam>
                           <spam>${p.cat}</spam>
+                          <spam>Estoque: ${p.quant}</spam>
                           <spam>R$ ${p.price}</spam>
                           <div>
                           ${delButton}
@@ -72,23 +78,22 @@ function makeButtons(prods){
 }
 
 //remove one product from database
-function removeProd(event){
-    var prods = localStorage.getObj("data_prod");
+async function removeProd(event){
     var buttonClicked = event.target
     var idTarget = buttonClicked.parentElement.parentElement.childNodes[1].innerHTML
     idTarget = idTarget.trim();
-    console.log("buttonclicked");
-    console.log(idTarget);
-    var count = 0;
-    for(let i of prods){
-        if(i.id === idTarget){
-            console.log("found!")
-            break;
-        }
-        count ++
+
+    let fetch_data = {
+      method:"DELETE",
     }
-    prods.splice(count, 1)
-    localStorage.setObj("data_prod", prods)
+    let resp = await fetch('/products/'+idTarget, fetch_data)
+
+    if(resp.status == 200){
+      alert("Produto removido com sucesso")
+    }else{
+      alert("Falha ao remover produto")
+    }
+
     location.reload()
 }
 

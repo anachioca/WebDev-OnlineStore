@@ -75,7 +75,7 @@ async function loadProducts(){
     method:"GET",
   }
 
-  let resp = await fetch('http://localhost:3000/products', fetch_data)
+  let resp = await fetch('/products', fetch_data)
   resp  = await resp.json();
 
   var products = resp;
