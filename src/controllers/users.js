@@ -30,7 +30,7 @@ exports.get = (req, res, next)=>{
 
 //remove user
 exports.rm = (req, res, next)=>{
-  User.findByIdAndRemove(req.params.id).then(x=>{
+  User.findOneAndRemove({email: req.body.email}).then(x=>{
     res.status(200).send({message: 'Usuário removido'});
   }).catch(e=>{
     res.status(400).send({message: 'Falha ao remover usuário', data: e});
@@ -58,6 +58,22 @@ exports.att = (req, res, next)=>{
     res.status(200).send({message: 'Usuário atualizado'});
   }).catch(e=>{
     res.status(400).send({message: 'Falha ao atualizar usuário', data: e});
+  });
+};
+
+//att user permission
+exports.perm = (req, res, next)=>{
+  console.log(req.body.email);
+  console.log(req.body.perm);
+  User.findOneAndUpdate({email: req.body.email}, {
+    $set:{
+      perm: req.body.perm
+    }
+  }).then(x=>{
+    res.status(200).send({message: 'Permissão atualizada'});
+  }).catch(e=>{
+    console.log("oi");
+    res.status(400).send({message: 'Falha ao atualizar Permissão', data: e});
   });
 };
 

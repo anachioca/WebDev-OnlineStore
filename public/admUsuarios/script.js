@@ -73,21 +73,30 @@ function makeButtons(users){
 }
 
 //turns a normal user into admin
-function makeAdmin(event){
-    var users = localStorage.getObj("data_users");
+async function makeAdmin(event){
     var buttonClicked = event.target
     var emailTarget = buttonClicked.parentElement.childNodes[1].innerHTML
     emailTarget = emailTarget.trim();
     console.log("buttonclicked");
     console.log(emailTarget);
-    for(let i of users){
-        console.log(i.email);
-        if(i.email === emailTarget){
-            console.log("found!")
-            i.perm = 2;
-            break;
-        }
+
+    var data = {
+			email: emailTarget,
+			perm: 2
+		}
+
+	  data = JSON.stringify(data);
+    let fetch_data = {
+      method:"PUT",
+      body: data,
+      headers: {
+				'Content-Type': 'application/json'
+			}
     }
-    localStorage.setObj("data_users", users)
+    let resp = await fetch('/users/perm', fetch_data)
+    if(resp.status == 400){
+      alert("Falha ao mudar permissão")
+    }
+
     location.reload()
 }

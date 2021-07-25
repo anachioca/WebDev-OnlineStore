@@ -48,6 +48,7 @@ function ready() {
   putInfo()
 
   document.getElementsByClassName('logout')[0].addEventListener('click', logout)
+  document.getElementsByClassName('del')[0].addEventListener('click', delUser)
   if (userStatus != 2) {
     document.getElementsByClassName('rmv-adm')[0].remove()
   } else if (userStatus == 2) {
@@ -77,9 +78,56 @@ function logout(){
   window.location.replace("../main/main.html")
 }
 
+async function delUser(){
+  var emailTarget = document.getElementsByClassName('email_')[0].innerHTML
+  emailTarget = emailTarget.trim();
+  var data = {
+    email: emailTarget,
+  }
+
+  data = JSON.stringify(data);
+  let fetch_data = {
+    method:"DELETE",
+    body: data,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  if(confirm("Tem certeza que deseja excluir sua conta?")){
+    let resp = await fetch('/users', fetch_data)
+    if(resp.status == 400){
+      alert("Falha ao deletar conta")
+    }else{
+      alert('Obrigado por usar nossa loja, volte quanto quiser!!')
+      logout();
+    }
+  }
+}
+
 //abdicate the adm status
-function noAdm() {
-  localStorage.setItem('user_status', 1)
-  alert('Você não é mais administrador da loja.')
+async function noAdm() {
+  var emailTarget = document.getElementsByClassName('email_')[0].innerHTML
+  emailTarget = emailTarget.trim();
+  var data = {
+    email: emailTarget,
+    perm: 1
+  }
+
+  data = JSON.stringify(data);
+  let fetch_data = {
+    method:"PUT",
+    body: data,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  let resp = await fetch('/users/perm', fetch_data)
+  if(resp.status == 400){
+    alert("Falha ao mudar permissão")
+  }else{
+    localStorage.setItem('user_status', 1)
+    alert('Você não é mais administrador da loja.')
+  }
+
   location.reload()
 }
