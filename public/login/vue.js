@@ -38,6 +38,7 @@ var app = new Vue({
           //redirect to login page
           window.location.replace("login.html")
         },
+
         /* Função que checa se o formulário está corretamente preenchido */
         checkForm: function(e){
             this.errors = [];
@@ -53,12 +54,20 @@ var app = new Vue({
 
             }
 
+            if(!this.nome) {
+                this.errors.push('Nome obrigatório');
+            }
+
             if(this.sobrenome) {
 
-                if(!(/^[A-Za-z\s]+$/.test(this.nome))){
+                if(!(/^[A-Za-z\s]+$/.test(this.sobrenome))){
                     this.errors.push('Sobrenome não deve conter números ou caractéres especiais');
                 }
 
+            }
+
+            if(!this.sobrenome) {
+                this.errors.push('Sobreome obrigatório');
             }
 
             if(this.telefone) {
@@ -69,11 +78,31 @@ var app = new Vue({
 
             }
 
+            if(!this.telefone) {
+                this.errors.push('Telefone obrigatório');
+            }
+
+            if(this.email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            
+                if(!re.test(String(this.email).toLowerCase())){
+                    this.errors.push('Email inválido');
+                }
+            }
+
+            if(!this.email) {
+                this.errors.push('Email obrigatório');
+            }
+
             if(this.senha && this.senha2) {
 
                 if (this.senha != this.senha2){
                     this.errors.push('Senhas não correspondem');
                 }
+            }
+
+            if(!this.senha || !this.senha2) {
+                this.errors.push('Senha obrigatória');
             }
 
             if(this.pais) {
@@ -84,12 +113,20 @@ var app = new Vue({
 
             }
 
+            if(!this.pais) {
+                this.errors.push('País obrigatório');
+            }
+
             if(this.cidade) {
 
                 if(!(/^[A-Za-z\s]+$/.test(this.cidade))){
                     this.errors.push('Cidade não deve conter números ou caractéres especiais');
                 }
 
+            }
+
+            if(!this.cidade) {
+                this.errors.push('Cidade obrigatório');
             }
 
             if(this.UF) {
@@ -100,8 +137,10 @@ var app = new Vue({
 
             }
 
-            console.log(this.nome)
-            console.log(this.errors);
+            if(!this.UF) {
+                this.errors.push('UF obrigatório');
+            }
+
             if(this.errors.length == 0){
               this.store();
             }

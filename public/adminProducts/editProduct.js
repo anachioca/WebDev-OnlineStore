@@ -20,13 +20,13 @@ var idTarget = localStorage.getItem('idProdEdit')
 //setup page functionalities
 function ready(){
 
-    if (idTarget >= 0) {
-        checkID()
-        addInfo()
-        document.getElementsByClassName('btt-save')[0].addEventListener('click', saveChanges)
-    } else  {
-        document.getElementsByClassName('btt-save')[0].addEventListener('click', addProd)
-    }
+    // if (idTarget >= 0) {
+    //     checkID()
+    //     addInfo()
+    //     document.getElementsByClassName('btt-save')[0].addEventListener('click', saveChanges)
+    // } else  {
+    //     document.getElementsByClassName('btt-save')[0].addEventListener('click', addProd)
+    // }
 }
 
 var prodID
@@ -75,7 +75,7 @@ function saveChanges() {
 
     localStorage.setObj('data_prod', dataProd)
     alert('Informações alteradas com sucesso!')
-    window.location.replace('adminProd.html')
+    window.location.replace('adminProd.html')                                                                
 }
 
 //add a new product into database

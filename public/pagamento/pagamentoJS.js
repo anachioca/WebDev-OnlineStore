@@ -35,7 +35,7 @@ function ready() {
 
 
   document.getElementsByClassName('info_cadastrada')[0].addEventListener('click', checkButton)
-  document.getElementsByClassName('btt-pay')[0].addEventListener('click', buyCheckout)
+  //document.getElementsByClassName('btt-pay')[0].addEventListener('click', buyCheckout)
 }
 
 //button functionality
@@ -75,9 +75,3 @@ function removeInfo() {
   document.getElementsByClassName('comp_')[0].setAttribute('value', '')
 }
 
-//Checkout script
-function buyCheckout () {
-    alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
-    localStorage.setItem("cart", [])
-    window.location.replace("../main/main.html")
-}

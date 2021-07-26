@@ -77,7 +77,7 @@ exports.put = (req, res, next)=>{
   product.save().then(x=>{
     res.status(201).send({message: 'Produto cadastrado'});
   }).catch(e=>{
-    res.status(400).send({message: 'Falha ao cadatrar produto', data: e});
+    res.status(400).send({message: 'Falha ao cadastrar produto', data: e});
   });
 
 };

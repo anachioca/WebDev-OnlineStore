@@ -54,7 +54,7 @@
 
       <div class="side">
         <div class="form lable-float">
-          <input type="text" name="img" autocomplete="off" class="img_ show_placeholder" placeholder="imagem.url" required/>
+          <input type="text" name="img" autocomplete="off" class="img_ show_placeholder" placeholder="imagem.url" v-model="imagem" required/>
           <label>Imagem</label>
         </div>
         <div class="form lable-float">
@@ -64,7 +64,7 @@
 
         <!-- Campo de email - Email input -->
           <div class="form form-button side">
-            <button type="button" name="button" class="btt-save">Salvar alterações</button>
+            <button type="button" name="button" class="btt-save" v-on:click.prevent.stop="checkForm()">Salvar alterações</button>
           </div>
       </div>
     </form>
