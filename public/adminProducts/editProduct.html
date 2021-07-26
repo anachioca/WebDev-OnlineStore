@@ -46,13 +46,24 @@
           <input type="text" name="preco" autocomplete="off" class="price_ show_placeholder" placeholder="50.00" v-model="preco" required/>
           <label>Preço</label>
         </div>
+
         <div class="form lable-float">
-          <input type="text" name="categoria" autocomplete="off" class="cat_ show_placeholder" placeholder="Ferramentas" v-model="categoria" required/>
-          <label>Categoria</label>
+          <input type="number" name="quantidade" min=1 autocomplete="off" class="cat_ show_placeholder" placeholder="1" v-model="quant" required/>
+          <label>Quantidade</label>
         </div>
       </div>
 
       <div class="side">
+        <div class="form lable-float">
+          <input type="list" list=cat_list name="" placeholder=" " value="" v-model="categoria" class="categoria_ show_placeholder" required/>
+          <label>Categoria</label>
+          <datalist id="cat_list">
+            <option value="Plantas">Plantas</option>
+            <option value="Ferramentas">Ferramentas</option>
+            <option value="Vasos">Vasos</option>
+            <option value="Solos">Solos</option>
+          </datalist>
+        </div>
         <div class="form lable-float">
           <input type="text" name="img" autocomplete="off" class="img_ show_placeholder" placeholder="imagem.url" v-model="imagem" required/>
           <label>Imagem</label>
@@ -61,6 +72,7 @@
           <input type="text" name="cuidados" autocomplete="off" class="cuidados_ show_placeholder" placeholder="Cuidados" v-model="cuidados" required/>
           <label>Cuidados</label>
         </div>
+
 
         <!-- Campo de email - Email input -->
           <div class="form form-button side">
