@@ -2,6 +2,7 @@ var app = new Vue({
     el: "#app",
     data: {
         errors: [],
+        id: null,
         nome: null,
         preco: null,
         categoria: null,
@@ -26,8 +27,8 @@ var app = new Vue({
               console.log(fetch_data);
               let resp = await fetch('/products', fetch_data)
               if(resp.status == 201)
-                alert("Produto cadastrado ou alterado com sucesso!");
-                // window.location.replace("adminProd.html")
+                alert("Produto cadastrado com sucesso!");
+                window.location.replace("adminProd.html")
 
             } catch(e){
               console.log(e);
@@ -35,11 +36,36 @@ var app = new Vue({
             //redirect to login page
 
           },
+          att: async function(){
+              var product = new Product(this.nome, this.categoria, this.preco, this.imagem, this.cuidados, this.quant);
+              console.log("produto...")
+              console.log(product);
+              try {
+                let data = JSON.stringify(product);
+                let fetch_data = {
+                  method:"PUT",
+                  body: data,
+                  headers: {
+                    'Content-Type': 'application/json'
+                  }
+                }
+                console.log(fetch_data);
+                let resp = await fetch('/products/'+this.id, fetch_data)
+                if(resp.status == 201)
+                  alert("Produto alterado com sucesso!");
+                  window.location.replace("adminProd.html")
 
+              } catch(e){
+                console.log(e);
+              }
+              //redirect to login page
+
+            },
         /* Função que checa se o formulário está corretamente preenchido */
         checkForm: function(e){
             this.errors = [];
             console.log(this.errors);
+            console.log(this.nome);
 
             if(this.nome) {
 
@@ -96,7 +122,11 @@ var app = new Vue({
 
 
             if(this.errors.length == 0){
+              if(this.id != null){
+                this.att();
+              }else{
                 this.store();
+              }
             }
         }
     }

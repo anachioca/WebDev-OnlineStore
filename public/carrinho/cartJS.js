@@ -23,11 +23,11 @@ function ready() {
 }
 
 //load products onto page
-function loadCart(){
+async function loadCart(){
   var cart = localStorage.getObj("cart");
   var p;
   for(let i of cart){
-   loadProduct(i);
+   await loadProduct(i);
   }
 
   var removeDiv = document.getElementById('blank')

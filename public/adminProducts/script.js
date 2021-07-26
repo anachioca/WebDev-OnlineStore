@@ -109,8 +109,5 @@ function editProd(event) {
 
 //product addition script
 function addProd(event) {
-    var buttonClicked = event.target
-    var idTarget = -1
-    localStorage.setItem('idProdEdit', idTarget)
-    window.location.replace("editProduct.html")
+    window.location.replace("addProduct.html")
 }

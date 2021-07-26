@@ -47,7 +47,7 @@ exports.att = (req, res, next)=>{
       quant: req.body.quant
     }
   }).then(x=>{
-    res.status(200).send({message: 'Produto atualizado'});
+    res.status(201).send({message: 'Produto atualizado'});
   }).catch(e=>{
     res.status(400).send({message: 'Falha ao atualizar produto', data: e});
   });
