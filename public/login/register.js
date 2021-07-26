@@ -47,7 +47,7 @@ async function check() {
 				'Content-Type': 'application/json'
 			}
 		}
-		let resp = await fetch('http://localhost:3000/users/login', fetch_data)
+		let resp = await fetch('/users/login', fetch_data)
     resp  = await resp.json();
     console.log(resp);
     if(resp.erro == 0){
