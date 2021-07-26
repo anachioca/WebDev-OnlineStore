@@ -6,13 +6,14 @@ var app = new Vue({
         preco: null,
         categoria: null,
         imagem: null,
-        cuidados: null
+        quant: null,
+        cuidados: ""
     },
     methods:{
         store: async function(){
-            var product = new Product(this.nome, this.preco, this.categoria, this.imagem, this.cuidados, 1);
+            var product = new Product(this.nome, this.categoria, this.preco, this.imagem, this.cuidados, this.quant);
             console.log("produto...")
-
+            console.log(product);
             try {
               let data = JSON.stringify(product);
               let fetch_data = {
@@ -22,28 +23,29 @@ var app = new Vue({
                   'Content-Type': 'application/json'
                 }
               }
-              let resp = await fetch('http://localhost:3000/products', fetch_data)
+              console.log(fetch_data);
+              let resp = await fetch('/products', fetch_data)
               if(resp.status == 201)
                 alert("Produto cadastrado ou alterado com sucesso!");
                 // window.location.replace("adminProd.html")
-  
+
             } catch(e){
               console.log(e);
             }
             //redirect to login page
-            
+
           },
-  
+
         /* Função que checa se o formulário está corretamente preenchido */
         checkForm: function(e){
             this.errors = [];
             console.log(this.errors);
 
             if(this.nome) {
-                
+
                 if(!(/^[A-Za-z\s]+$/.test(this.nome))){
                     this.errors.push('Nome não deve conter números ou caractéres especiais');
-                } 
+                }
 
             }
 
@@ -63,9 +65,21 @@ var app = new Vue({
                 this.errors.push('Preço obrigatório');
             }
 
+            if(this.quant) {
+
+                if(this.quant <= 0){
+                    this.errors.push('Quantidade deve ser maior que 0');
+                }
+
+            }
+
+            if(!this.quant) {
+                this.errors.push('Quantidade obrigatório');
+            }
+
             if(this.categoria) {
 
-                let categorias = ['plantas', 'ferramentas', 'vasos', 'solos'];
+                let categorias = ['Plantas', 'Ferramentas', 'Vasos', 'Solos'];
                 if (!categorias.includes(this.categoria)) {
                     this.errors.push('Categoria Inexistente');
                 }
@@ -80,7 +94,7 @@ var app = new Vue({
                 this.errors.push('Imagem obrigatória');
             }
 
-        
+
             if(this.errors.length == 0){
                 this.store();
             }
