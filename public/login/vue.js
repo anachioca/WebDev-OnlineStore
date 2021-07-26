@@ -28,7 +28,7 @@ var app = new Vue({
                 'Content-Type': 'application/json'
               }
             }
-            let resp = await fetch('http://localhost:3000/users', fetch_data)
+            let resp = await fetch('/users', fetch_data)
             if(resp.status == 201)
               alert("Usuário cadastrado com sucesso!");
 
@@ -84,7 +84,7 @@ var app = new Vue({
 
             if(this.email) {
                 const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            
+
                 if(!re.test(String(this.email).toLowerCase())){
                     this.errors.push('Email inválido');
                 }
