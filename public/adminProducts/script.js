@@ -43,7 +43,7 @@ function loadProd(p){
                           <spam>${p.name} - </spam>
                           <spam>${p.cat} - </spam>
                           <spam>Estoque: ${p.quant}</spam>
-                          <spam>Vendidos: ${p.sold}</spam>
+                          <spam>- Vendidos: ${p.sold}</spam>
                         <div style="float:right">
                         ${delButton}
                         ${editButton}
