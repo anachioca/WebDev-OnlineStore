@@ -1,3 +1,12 @@
+//functions to set and get objects onto the localStorage
+Storage.prototype.setObj = function(key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+}
+Storage.prototype.getObj = function(key) {
+    return JSON.parse(this.getItem(key))
+}
+
+
 var app = new Vue({
     el: "#app",
     data: {
@@ -16,10 +25,36 @@ var app = new Vue({
         CVV: null
     },
     methods:{
-        store: async function(){
-            /* Em uma aplicação real, dados seriam enviados para distribuidora. */
-            alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
-            window.location.replace("../main/main.html")
+        sell: async function(){
+            var cart = await localStorage.getObj("cart")
+            console.log(cart.length)
+            for (let i of cart) {
+                try {
+                    let data = JSON.stringify(i)
+                    console.log(data)
+                    let fetch_data = {
+                        method: "PUT",
+                        body: data,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }
+                    console.log(fetch_data)
+                    let resp = await fetch('/products/'+i+'/sell', fetch_data)
+                    if(resp.status == 201) {
+                        console.log('Venda efetuada com sucesso!');
+                        localStorage.setObj("cart", []) // se deu td certo, remove os itens do carrinho
+                        /* Em uma aplicação real, dados seriam enviados para distribuidora. */
+                        alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
+                        window.location.replace("../main/main.html")
+                    } else {
+                        console.log('Algo deu errado...');
+                    }
+
+                } catch(e) {
+                    console.log(e);
+                }
+            }
           },
 
         /* Função que checa se o formulário está corretamente preenchido */
@@ -160,8 +195,8 @@ var app = new Vue({
             console.log(this.errors)
 
             if(this.errors.length == 0){
-                console.log("store")
-                this.store();
+                console.log("sell")
+                this.sell();
             }
         }
     }
