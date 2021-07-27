@@ -42,3 +42,9 @@ body {
     background-color: #ADC178;
     color: #323232;
 }
+
+@media only screen and (max-width: 1000px){
+    #mainbox {
+        min-width: 70%;
+    }
+}
