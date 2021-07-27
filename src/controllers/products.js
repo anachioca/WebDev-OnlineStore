@@ -53,6 +53,32 @@ exports.att = (req, res, next)=>{
   });
 };
 
+exports.sell = (req, res, next)=>{
+  Product.findById(req.params.id).then(data=>{
+    Product.findByIdAndUpdate(req.params.id, {
+      $set:{
+        quant: (parseInt(data.quant)-parseInt(req.body.quant)),
+        sold: (parseInt(data.sold)+parseInt(req.body.quant))
+      }
+    }).then(x=>{
+      res.status(201).send({message: 'Produto vendido'});
+    }).catch(e=>{
+      res.status(400).send({message: 'Falha ao vender', data: e});
+    });
+  }).catch(e=>{
+    res.status(400).send(e);
+  });
+  // Product.findByIdAndUpdate(req.params.id, {
+  //   $set:{
+  //
+  //   }
+  // }).then(x=>{
+  //   res.status(201).send({message: 'Produto atualizado'});
+  // }).catch(e=>{
+  //   res.status(400).send({message: 'Falha ao atualizar produto', data: e});
+  // });
+}
+
 exports.put = (req, res, next)=>{
 
   let contract = new validationContract();
@@ -74,6 +100,7 @@ exports.put = (req, res, next)=>{
   product.img = req.body.img;
   product.cuidados = req.body.cuidados;
   product.quant = req.body.quant;
+  product.sold = 0;
   product.save().then(x=>{
     res.status(201).send({message: 'Produto cadastrado'});
   }).catch(e=>{

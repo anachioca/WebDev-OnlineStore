@@ -7,9 +7,8 @@ if (document.readyState == 'loading') {
 
 function ready() {
   var removeCartItens = document.getElementsByClassName('remove')
-  console.log(removeCartItens)
   for (var i = 0; i < removeCartItens.length; i++) {
-    var button = removeCartItens[i]
+    var button = removeCartItens[i].childNodes[1];
     button.addEventListener('click', removeItem) // remove item
   }
 
@@ -105,11 +104,9 @@ function quantityChanged (event) {
   var input = event.target
   var id = input.parentElement.parentElement.childNodes[1].childNodes[3].childNodes[5].childNodes[1].innerHTML;
   var max = input.max;
-  console.log(id);
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1
   }
-  console.log(input.value);
   if(parseInt(input.value) > parseInt(max)){
     input.value = max;
   }
@@ -136,12 +133,6 @@ function purchaseClicked () {
     alert ('Por favor, selecione a forma de entrega.')
   } else {
     alert('Você será redirecionado para a página de pagamento!')
-    var cartItens = document.getElementsByClassName('product-list')[0]
-    while (cartItens.hasChildNodes()){
-      cartItens.removeChild(cartItens.firstChild)
-    }
-    document.getElementsByClassName('final-value')[0].innerHTML = '0'
-    document.getElementsByClassName('total-value')[0].innerHTML = '0'
     window.location.replace("../pagamento/pagamento.html")
   }
 }
