@@ -50,15 +50,15 @@ function checkButton () {
 //load user info
 function putInfo (){
 
-  document.getElementsByClassName('name_')[0].setAttribute('value', storedName)
-  document.getElementsByClassName('fone_')[0].setAttribute('value', storedPhone)
-  document.getElementsByClassName('email_')[0].setAttribute('value', storedEmail)
-  document.getElementsByClassName('country_')[0].setAttribute('value', storedCountry)
-  document.getElementsByClassName('city_')[0].setAttribute('value', storedCity)
-  document.getElementsByClassName('uf_')[0].setAttribute('value', storedUF)
-  document.getElementsByClassName('adress_')[0].setAttribute('value', storedAdd)
-  document.getElementsByClassName('number_')[0].setAttribute('value', storedNumber)
-  document.getElementsByClassName('comp_')[0].setAttribute('value', storedComp)
+  app.nomeCompleto = storedName;
+  app.telefone = storedPhone;
+  app.email = storedEmail;
+  app.pais = storedCountry;
+  app.cidade = storedCity;
+  app.UF = storedUF;
+  app.endereco = storedAdd;
+  app.num = storedNumber;
+  app.complemento = storedComp;
 }
 
 //remove user info
@@ -74,4 +74,3 @@ function removeInfo() {
   document.getElementsByClassName('number_')[0].setAttribute('value', '')
   document.getElementsByClassName('comp_')[0].setAttribute('value', '')
 }
-
