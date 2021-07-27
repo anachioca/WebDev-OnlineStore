@@ -37,7 +37,7 @@ async function load_databse(){
   dataProd.push(new Product("Tesoura Poda","Ferramentas","22.99", "/img/jackfrukt-herb-scissors-beige__0953659_pe804255_s5.webp", "", 9));
   dataProd.push(new Product("Vaso Rosa","Vasos/Utensílios","69.99", "/img/chiafroen-plant-pot-indoor-outdoor-light-pink__0951777_pe804357_s5.webp", "", 8));
   dataProd.push(new Product("Vaso Branco","Vasos/Utensílios","69.99", "/img/chiafroen-plant-pot-white__0705516_pe725649_s5.webp", "", 7));
-  dataProd.push(new Product("Vaso Cimento","Vasos/Utensílios","69.99", "/img/boysenbaer-plant-pot-indoor-outdoor-light-gray__0893430_pe782537_s5.webp", ""));
+  dataProd.push(new Product("Vaso Cimento","Vasos/Utensílios","69.99", "/img/boysenbaer-plant-pot-indoor-outdoor-light-gray__0893430_pe782537_s5.webp", "", 88));
   dataProd.push(new Product("Argila Expandida","Terra","25.99", "/img/odla-growing-media-clay-pellets__0637562_pe698398_s5.webp", "", 6));
 
   for(let i of dataProd){

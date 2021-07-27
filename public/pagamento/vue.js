@@ -11,6 +11,7 @@ var app = new Vue({
     el: "#app",
     data: {
         errors: [],
+        pedido: [],
         nomeCompleto: null,
         telefone: null,
         email: null,
@@ -19,6 +20,7 @@ var app = new Vue({
         UF: null,
         endereco: null,
         num: null,
+        complemento: null,
         nomeCartao: null,
         cartao: null,
         valCartao: null,
@@ -87,7 +89,7 @@ var app = new Vue({
 
             if(this.email) {
                 const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            
+
                 if(!re.test(String(this.email).toLowerCase())){
                     this.errors.push('Email inválido');
                 }
@@ -100,7 +102,7 @@ var app = new Vue({
             if(!this.pais) {
                 this.errors.push('País obrigatório');
             }
-            
+
             if(!this.cidade) {
                 this.errors.push('Cidade obrigatório');
             }

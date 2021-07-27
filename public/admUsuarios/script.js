@@ -45,7 +45,20 @@ function loadUser(user){
     }
 
     userItem.classList.add("item")
-    var listItem = `<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    var listItem = `<div class="col-sm-12">
+                      <div class="card">
+                        <div class="card-body">
+                        <div style="float: left">
+                        ${user.name}
+                        <small> - ${user.email} </small>
+                        </div>
+                        <div style="float:right">${innerButton}</div>
+                        </div>
+                      </div>
+                    </div>`;
+    
+    
+    `<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between"> ${user.name}
                             <small> ${user.email} </small>
                             ${innerButton}

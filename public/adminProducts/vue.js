@@ -103,15 +103,6 @@ var app = new Vue({
                 this.errors.push('Quantidade obrigatório');
             }
 
-            if(this.categoria) {
-
-                let categorias = ['Plantas', 'Ferramentas', 'Vasos', 'Solos'];
-                if (!categorias.includes(this.categoria)) {
-                    this.errors.push('Categoria Inexistente');
-                }
-
-            }
-
             if(!this.categoria) {
                 this.errors.push('Categoria obrigatório');
             }

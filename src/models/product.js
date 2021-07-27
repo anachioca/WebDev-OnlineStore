@@ -11,6 +11,10 @@ const schema = new Schema({
     type: Number,
     required: true,
   },
+  sold:{
+    type: Number,
+    required: true,
+  },
   cat:{
     type: String,
     required: true,

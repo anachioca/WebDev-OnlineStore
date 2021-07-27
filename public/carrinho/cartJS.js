@@ -7,9 +7,8 @@ if (document.readyState == 'loading') {
 
 function ready() {
   var removeCartItens = document.getElementsByClassName('remove')
-  console.log(removeCartItens)
   for (var i = 0; i < removeCartItens.length; i++) {
-    var button = removeCartItens[i]
+    var button = removeCartItens[i].childNodes[1];
     button.addEventListener('click', removeItem) // remove item
   }
 
@@ -47,12 +46,12 @@ async function getProd(id){
 }
 
 //load one product onto page
-async function loadProduct(id){
+async function loadProduct(item){
   var product_list = document.getElementsByClassName("product-list")[0];
   var basket_p = document.createElement('div');
   basket_p.classList.add("basket-product")
 
-  var p = await getProd(id);
+  var p = await getProd(item.id);
   var product_inf=`
     <div class="item">
       <div class="product-image">
@@ -69,7 +68,7 @@ async function loadProduct(id){
 
     <div class="price">${p.price}</div>
     <div class="quantity">
-      <input type="number" value="1" min="1" class="quantity-field">
+      <input type="number" value="${item.quant}" min="1" max="${p.quant}" class="quantity-field">
     </div>
 
     <div class="subtotal">${p.price}</div>
@@ -90,7 +89,7 @@ function removeItem (event) {
   var buttonClicked = event.target
   var id = buttonClicked.parentElement.parentElement.childNodes[1].childNodes[3].childNodes[5].childNodes[1].innerHTML
   for(let i=0; i<cart.length; i++){
-    if(cart[i] == id){
+    if(cart[i].id == id){
       cart.splice(i, 1);
       break;
     }
@@ -101,10 +100,23 @@ function removeItem (event) {
 }
 
 function quantityChanged (event) {
+  var cart = localStorage.getObj("cart");
   var input = event.target
+  var id = input.parentElement.parentElement.childNodes[1].childNodes[3].childNodes[5].childNodes[1].innerHTML;
+  var max = input.max;
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1
   }
+  if(parseInt(input.value) > parseInt(max)){
+    input.value = max;
+  }
+  for(let i=0; i<cart.length; i++){
+    if(cart[i].id == id){
+      cart[i].quant = input.value;
+      break;
+    }
+  }
+  localStorage.setObj("cart", cart)
   updateTotal()
 }
 
@@ -121,12 +133,6 @@ function purchaseClicked () {
     alert ('Por favor, selecione a forma de entrega.')
   } else {
     alert('Você será redirecionado para a página de pagamento!')
-    var cartItens = document.getElementsByClassName('product-list')[0]
-    while (cartItens.hasChildNodes()){
-      cartItens.removeChild(cartItens.firstChild)
-    }
-    document.getElementsByClassName('final-value')[0].innerHTML = '0'
-    document.getElementsByClassName('total-value')[0].innerHTML = '0'
     window.location.replace("../pagamento/pagamento.html")
   }
 }

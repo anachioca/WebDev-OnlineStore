@@ -45,8 +45,11 @@ function addToCart() {
   var cart = localStorage.getObj("cart");
   console.log('addToCart')
   var buttonClicked = event.target
-  var id = buttonClicked.parentElement.id
-  cart.push(id)
+  var item = {
+    id: buttonClicked.parentElement.id,
+    quant: 1
+  }
+  cart.push(item)
   localStorage.setObj("cart", cart)
 
   buttonClicked.innerHTML = "- carrinho"
@@ -59,7 +62,7 @@ function removeFromCart() {
   var buttonClicked = event.target
   var id = buttonClicked.parentElement.id
   for(let i=0; i<cart.length; i++){
-    if(cart[i] == id){
+    if(cart[i].id == id){
       cart.splice(i, 1);
       break;
     }
@@ -90,7 +93,7 @@ async function loadProduct(p){
   var cart = await localStorage.getObj("cart");
   var inCart = "+ carrinho"
   for (let i of cart) {
-    if (i == p._id) {
+    if (i.id == p._id) {
       inCart = "- carrinho"
       break;
     }

@@ -42,7 +42,7 @@
         <input type = "checkbox" id = "cadastrado" nome = "cadast" value = "cadastrado" class="info_cadastrada">
         <label for = "cadastrado" class="info_cadastrada"> Informações iguais ao cadastrado? </label>
       </div>
-  
+
       <div class="form lable-float">
         <input type="text" name="name" autocomplete="off" class="name_ show_placeholder form-control" placeholder="Fulano da Silva" v-model="nomeCompleto" required/>
         <label>Nome Completo</label>
@@ -80,10 +80,10 @@
           </div>
         </div>
         <div class="form lable-float">
-          <input type="text" name="complement" autocomplete="off" class="comp_ show_placeholder form-control" placeholder="11a"/>
+          <input type="text" name="complement" autocomplete="off" class="comp_ show_placeholder form-control" placeholder="11a" v-model="complemento"/>
           <label>Complemento</label>
         </div>
-      
+
     </div>
     <!-- Formulário - Forms -->
       <!-- Botão "Entrar" - Submit button -->
@@ -127,12 +127,12 @@
   <!-- ------------------- Fim login - Login end --------------------- -->
 
     <!-- bootstrap scripts -->
-    <script src="pagamentoJS.js"></script>
     <script src="../controller/nav-bar.js"></script>
 
     <script src = "https://unpkg.com/vue"></script>
     <script src = "vue.js"></script>
-    
+    <script src="pagamentoJS.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
