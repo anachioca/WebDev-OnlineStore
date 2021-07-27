@@ -111,6 +111,8 @@ async function loadProduct(p){
   var cartButton =`<button class="btn btn-primary btn-custom cart-add">${inCart}</button>`;
   if(user_status == 2){
     cartButton = ``;
+  }else if(p.quant <= 0){
+    cartButton =`<button class="btn btn-custom-disabled cart-add" disabled>Esgotado</button>`;
   }
 
   var product_inf_sem_modal=`

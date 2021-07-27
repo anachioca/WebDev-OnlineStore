@@ -31,8 +31,22 @@ body {
     color: #323232;
 }
 
+.btn-custom-disabled {
+    opacity: 50%;
+    background-color: #ADC178;
+    border-color: #ADC178;
+    color: #323232;
+}
+
 .btn-custom:hover {
     background-color: #323232;
     color: #ADC178;
     border-color: #323232;
+}
+
+.btn-custom-disabled:hover {
+    opacity: 50%;
+    background-color: #ADC178;
+    border-color: #ADC178;
+    color: #323232;
 }

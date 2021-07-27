@@ -50,14 +50,14 @@ function loadUser(user){
                         <div class="card-body">
                         <div style="float: left">
                         ${user.name}
-                        <small> - ${user.email} </small>
+                        - <small>${user.email}</small>
                         </div>
                         <div style="float:right">${innerButton}</div>
                         </div>
                       </div>
                     </div>`;
-    
-    
+
+
     `<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between"> ${user.name}
                             <small> ${user.email} </small>
@@ -88,7 +88,7 @@ function makeButtons(users){
 //turns a normal user into admin
 async function makeAdmin(event){
     var buttonClicked = event.target
-    var emailTarget = buttonClicked.parentElement.childNodes[1].innerHTML
+    var emailTarget = buttonClicked.parentElement.parentElement.childNodes[1].childNodes[1].innerHTML
     emailTarget = emailTarget.trim();
     console.log("buttonclicked");
     console.log(emailTarget);

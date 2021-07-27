@@ -36,20 +36,6 @@ exports.rm = (req, res, next)=>{
   });
 };
 
-exports.sell = (req, res, next)=>{
-  Product.findByIdAndUpdate(req.params.id, {
-    $set:{
-      sold: req.body.sold,
-      quant: req.body.quant-req.body.sold
-    }
-  }).then(x=>{
-    res.status(201).send({message: 'Venda efetuada'});
-  }).catch(e=>{
-    res.status(400).send({message: 'Falha na venda', data: e});
-  });
-};
-
-
 exports.att = (req, res, next)=>{
   Product.findByIdAndUpdate(req.params.id, {
     $set:{
@@ -82,15 +68,6 @@ exports.sell = (req, res, next)=>{
   }).catch(e=>{
     res.status(400).send(e);
   });
-  // Product.findByIdAndUpdate(req.params.id, {
-  //   $set:{
-  //
-  //   }
-  // }).then(x=>{
-  //   res.status(201).send({message: 'Produto atualizado'});
-  // }).catch(e=>{
-  //   res.status(400).send({message: 'Falha ao atualizar produto', data: e});
-  // });
 }
 
 exports.put = (req, res, next)=>{

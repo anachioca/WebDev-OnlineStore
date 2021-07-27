@@ -13,7 +13,7 @@ var app = new Vue({
         UF: null,
         endereco: null,
         num: null,
-        comp: null
+        comp: ""
     },
     methods:{
         store: async function(){
@@ -29,14 +29,16 @@ var app = new Vue({
               }
             }
             let resp = await fetch('/users', fetch_data)
-            if(resp.status == 201)
+            if(resp.status == 201){
               alert("Usuário cadastrado com sucesso!");
-
+              window.location.replace("login.html")
+            }else{
+                alert("Email já cadastrado!");
+            }
           } catch(e){
             console.log(e);
           }
           //redirect to login page
-          window.location.replace("login.html")
         },
 
         /* Função que checa se o formulário está corretamente preenchido */
