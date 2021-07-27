@@ -36,19 +36,20 @@ function loadProd(p){
     var delButton = `<button type="button" class="btn btn-prod-rm btn-custom"> Excluir </button>`
     var editButton = `<button type="button" class="btn btn-prod-ed btn-custom"> Editar </button>`
 
-    var listItem = `<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                          <strong>${p._id}</strong>
-                          <spam>${p.name}</spam>
-                          <spam>${p.cat}</spam>
+    var listItem = `<div class="col-sm-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <strong style="float: left">${p._id}</strong>
+                          <spam>${p.name} - </spam>
+                          <spam>${p.cat} - </spam>
                           <spam>Estoque: ${p.quant}</spam>
-                          <spam>R$ ${p.price}</spam>
-                          <div>
-                          ${delButton}
-                          ${editButton}
-                          </div>
+                        <div style="float:right">
+                        ${delButton}
+                        ${editButton}
                         </div>
-                    </a>`;
+                      </div>
+                    </div>`;
+
     prodItem.innerHTML = listItem;
     prodList.appendChild(prodItem);
 }
