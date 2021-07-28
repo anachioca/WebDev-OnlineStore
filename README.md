@@ -36,14 +36,14 @@ Administrator user:
 ![diagramaADMIN](public/img/ADMIN.png)
 
 #### Navbar
-The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. We load the navbar onto each page using javascript. The navbar is presented in a different manner depending on the type of the user (administrator, client or unlogged).
+The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. We load the navbar onto each page using javascript. The navbar is presented in a different manner depending on the type of the user (administrator, client or unlogged). On the navbar, the user can access the products page, the cart (if they are a client) or the admin page (if they are an admin), and the user page.
 
 #### Admin Page (and subsequent pages)
 This page is shown in the navbar when the administrator is logged in.
 In this page the admin can manage the available products or the users that are registered on the plataform. He can turn a normal user (client) into a new administrator. He could also add new products or edit the already existing ones.
 
 #### User Page
-
+In the user page, which can be accessed through the green button on the right side of the navbar, the user can view their information, log out from their acconut, delete their account and, if they are an administrator they can also stop being an administrator.
 
 #### Login Page
 In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
@@ -65,7 +65,7 @@ This page also presents our group's functionality. For every product that belong
 This page displays all the products selected by the user. It's possible to change the desired quantity of each product, as well as remove them. The sidebar display the current cost of all products in the cart and the shipment options. After the user is done with shopping, they can go to the payment page, where they'll fill in the forms with shipment and payment information. After the payment is concluded, the user is redirected to the main page. 
 
 #### Main Page
-The main page is responsive, and the background image changes according to the size of the screen.
+The main page is responsive, and the background image changes according to the size of the screen. 
  
 ## Comments About the Code:
 
