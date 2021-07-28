@@ -73,20 +73,25 @@ In this project, CSS3, HTML5, Bootstrap, JavaScript and Python (for the server) 
 
 ## Test Plan:
 
-Our tests were made manually. 
+Our tests were made manually.
 
 ## Test Results:
 
-We performed multiples tests for each funcionality of our system. To test the functionalities it was necessary to use some type of database, in this project we used the local storage as a fake database, this way we could save Product and User objects and simulate a database API call inside the functionalities javascript code. 
+We performed multiples tests for each funcionality of our system.
 
 * Login systems is working well for all types of users. After loging in user is redirected to the correspondent page depending on it's type (admin or client).
-* Users can loggout from their account. 
+* Users can loggout from their account.
+* Users can delet their account. 
 * Registration page is working well. After registering the user's informations are saved in the database and the user is redirected to the login page.
 * Administrator pages are working well. 
   * The administrator can make other users in the local storage administrators. One administrator can not remove another administrator's role, but only their own. Everything is working as expected.
-  * The administrator can add new products or edit the ones already in local storage. Both actions are working well and the product infos are being saved in local storage correctly.
+  * The administrator can add new products or edit the ones already in local storage. Both actions are working well and the product infos are being saved in database correctly.
 * Clients can add products to the cart only once, and can change the desired quantity in the cart page. Once a product is already inside the cart, it cannot be added again, but only removed or have it's quantity changed.
 * The cart is interactive and displays the current sum of all the products in the shopping cart.
+* The user can finalize the purchase by using a payment form.
+* The payment form can be filld manually or automatcly.
+* When the purchase is finalized the cart becomes empty and the product quantity is changed in the invetory.
+* When a product's quantity is zero the "add cart" button in products page is disabled. 
 
 #### Forms testing:
 The following forms were tested:
@@ -96,7 +101,9 @@ The following forms were tested:
 
 
 #### Back-End testing:  
-
+ * All backend routes and functionalities were tested using Postman and browser.
+ * All the routes behaves as expected, sending error when used incorrectly and results when used correctly.
+ * Some routes send error personalized error messages for debugging.
 
 ## Build Procedure:
 
