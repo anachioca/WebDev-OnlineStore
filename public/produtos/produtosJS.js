@@ -115,6 +115,8 @@ async function loadProduct(p){
     cartButton =`<button class="btn btn-custom-disabled cart-add" disabled>Esgotado</button>`;
   }
 
+  var modal = p.name.replace(/\s/g, '');
+
   var product_inf_sem_modal=`
     <div class="card card-custom">
             <img class="card-img-top img-hover" src="${p.img}" alt="Card image cap">
@@ -135,11 +137,11 @@ async function loadProduct(p){
               <div id="${p._id}">
                 ${cartButton}
               <!-- Modal -->
-              <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#Modal${p.name}">
+              <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#Modal${modal}">
                 Cuidados
               </button>
               </div>
-              <div class="modal fade" id="Modal${p.name}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="Modal${modal}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -158,8 +160,7 @@ async function loadProduct(p){
           </div>
           `;
 
-  if (p.cuidados == "")
-    basket_p.innerHTML = product_inf_sem_modal
+  if (p.cuidados == "")basket_p.innerHTML = product_inf_sem_modal
   else basket_p.innerHTML = product_inf_com_modal
   product_list.appendChild(basket_p);
 }
