@@ -111,5 +111,7 @@ Or simply access our webpage [here](http://maplantinhas.herokuapp.com/)
 
 ## Problems:
  We had some problems to implement a single navbar html file and use it in all the other pages, and now (2nd milestone) we are able to do this by using javascipt.
+ In the last Peer Review, the reviwers noticed that the modal for the "cuidados" button doesn't work if you add the care instructions to products that didn't previously have it. We have fixed that problem.
 
 ## Comments:
+ We did not implement safety and data security and protection.
