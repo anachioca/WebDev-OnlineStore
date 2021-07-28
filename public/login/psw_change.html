@@ -37,7 +37,7 @@
       </div>
       <!-- Botão "Entrar" - Submit button -->
       <div class="form form-button">
-        <button type="submit" name="button">Enviar</button>
+        <button type="button" name="button" onclick="alerta()">Enviar</button>
       </div>
       <!-- links para paginas relacionadas a login - link to other pages -->
       <div class="links">
@@ -49,7 +49,12 @@
 
     <!-- bootstrap scripts -->
     <script src="../controller/nav-bar.js"></script>
-    
+    <script type="text/javascript">
+      function alerta(){
+        alert("Um email de recuperação foi enviado para você!")
+      }
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
