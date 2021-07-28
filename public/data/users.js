@@ -4,8 +4,36 @@ if (document.readyState == 'loading') {
 } else {
   ready()
 }
-  //initializates user local information
+
+//user class
+class User{
+  constructor(name, lastname, phone, email, password, country, city, uf, adress, num, comp, perm){
+    this.name = name;
+    this.lastname = lastname;
+    this.phone = phone;
+    this.email = email;
+    this.password = password;
+    this.country = country;
+    this.city = city;
+    this.uf = uf;
+    this.adress = adress;
+    this.num = num;
+    this.comp = comp;
+    this.perm = perm;
+  }
+}
+
+//functions to set and get objects onto the localStorage
+Storage.prototype.setObj = function(key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+}
+Storage.prototype.getObj = function(key) {
+    return JSON.parse(this.getItem(key))
+}
+
+
 function ready(){
+  //initializates user local information
   var user_setup = localStorage.getItem("user_status");
 
   if(user_setup == null || user_setup == ""){
