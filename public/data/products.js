@@ -50,7 +50,7 @@ async function load_databse(){
           'Content-Type': 'application/json'
         }
       }
-      let resp = await fetch('http://localhost:3000/products', fetch_data)
+      let resp = await fetch('/products', fetch_data)
       if(resp.status == 201)
         console.log("Produto cadastrado com sucesso!");
 
