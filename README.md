@@ -1,7 +1,7 @@
 #  SCC0219 - Web Development
 ## MAPlantinhas Online Shop - Plants and Gardening Tools
 Online shop website, that contains products for gardening, like plants, soil, vases and tools. The application suports two types of users: admin (to manage products, promotions and other users) and clients (that can buy products and add their favorite to cart). <br>
-The specific application for this kind business is the possibility to teach the user how to take care of the plant they intend to buy, like a little manual.
+The specific application for this kind business is the possibility to teach the user how to take care of the product they intend to buy, like a little manual.
 
 You can access our website on http://maplantinhas.herokuapp.com/
 
