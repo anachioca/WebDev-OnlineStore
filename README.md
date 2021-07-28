@@ -33,7 +33,7 @@ Unlogged user:
 ![diagramaNLogado](public/img/nãoLogado.png)
 
 Administrator user:
-![diagramaADMIN](public/img/%20(2).png.png)
+![diagramaADMIN](public/img/ADMINn.png)
 
 #### Navbar
 The navbar appears in every page of our application, and was made using Bootstrap's navbar component. A specific stylesheet was used to apply different colors to the navbar. We load the navbar onto each page using javascript. The navbar is presented in a different manner depending on the type of the user (administrator, client or unlogged). On the navbar, the user can access the products page, the cart (if they are a client) or the admin page (if they are an admin), and the user page.
