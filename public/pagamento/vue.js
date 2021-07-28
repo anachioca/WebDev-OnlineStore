@@ -60,7 +60,7 @@ var app = new Vue({
             }
             localStorage.setObj("cart", []) // se deu td certo, remove os itens do carrinho
             alert('Compra efeituada com sucesso! Obrigada por comprar em nossa loja! :)')
-            //window.location.replace("../main/main.html")
+            window.location.replace("../main/main.html")
           },
 
         /* Função que checa se o formulário está corretamente preenchido */
