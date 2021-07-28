@@ -78,15 +78,23 @@ Our tests were made manually.
 
 We performed multiples tests for each funcionality of our system. To test the functionalities it was necessary to use some type of database, in this project we used the local storage as a fake database, this way we could save Product and User objects and simulate a database API call inside the functionalities javascript code. 
 
-* Some JavaScipt codes were made to automatically create fake database and load users and products into it. These scripts run when the user accesses the main page so if you run this version in your machine, it's important to open first the main page to guarantee that the fake database functionalities run correctly.
 * Login systems is working well for all types of users. After loging in user is redirected to the correspondent page depending on it's type (admin or client).
 * Users can loggout from their account. 
-* Registration page is working well. After registering the user's informations are saves in local storage and the user is redirected to the login page.
+* Registration page is working well. After registering the user's informations are saved in the database and the user is redirected to the login page.
 * Administrator pages are working well. 
   * The administrator can make other users in the local storage administrators. One administrator can not remove another administrator's role, but only their own. Everything is working as expected.
   * The administrator can add new products or edit the ones already in local storage. Both actions are working well and the product infos are being saved in local storage correctly.
 * Clients can add products to the cart only once, and can change the desired quantity in the cart page. Once a product is already inside the cart, it cannot be added again, but only removed or have it's quantity changed.
 * The cart is interactive and displays the current sum of all the products in the shopping cart.
+
+#### Forms testing:
+The following forms were tested:
+* Payment:   
+* SignUp:   
+* Edit/Add Products:  
+
+
+#### Back-End testing:  
 
 
 ## Build Procedure:
@@ -97,9 +105,7 @@ To install the dependencies run `npm install`.
 To run our website, run `npm start` in the same directory as the project's folders are.  
 Type `http://localhost:3000/` on your browser to access our main page.
 
-Or simply access our webpage [here](http://maplantinhas.herokuapp.com/)
-
-**Important:** Do not access the website pages without loading the main page first. The main page contains important javascript code that loads the fake database that is used in the rest of the website. In the final version of this project we will use a real database so this problem will no longer exist.  If you follow the instructions above the first page loded will be the main, and the site will run correctly.
+Or simply access our webpage [here](http://maplantinhas.herokuapp.com/)   
 
 
 ## Problems:
