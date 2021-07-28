@@ -3,6 +3,7 @@
 Online shop website, that contains products for gardening, like plants, soil, vases and tools. The application suports two types of users: admin (to manage products, promotions and other users) and clients (that can buy products and add their favorite to cart). <br>
 The specific application for this kind business is the possibility to teach the user how to take care of the plant they intend to buy, like a little manual.
 
+You can access our website on http://maplantinhas.herokuapp.com/
 
 ## Group:
 * Ana Laura Chioca Vieira - 9866531
@@ -46,11 +47,11 @@ In this page the user can login the website's system using a registerd email and
 If the user doesn't have a registered account, he can access the register page from this page.<br>
 
 ##### Login as Admin (mocked)
-Login: admin@admin.com <br>
-Password: 321321
+Login: 1@1.com <br>
+Password: 123
 
 ##### Login as regular user
-Login: 1@1 <br>
+Login: m@m.com <br>
 Password: 123<br>
 There are others mocked users, and you can see all of them inside the "data" folder > users.js. <br>
 Or, you can register yourself and login as a regular user.
@@ -90,8 +91,10 @@ We performed multiples tests for each funcionality of our system. To test the fu
 
 ## Build Procedure:
 
-Run `python3 server.py` in the same directory as the project's folders are.  
-Type `http://localhost:8080/` on your browser to access our main page.
+Run `mpn start` in the same directory as the project's folders are.  
+Type `http://localhost:3000/` on your browser to access our main page.
+
+Or simply access our webpage ![here](http://maplantinhas.herokuapp.com/)
 
 **Important:** Do not access the website pages without loading the main page first. The main page contains important javascript code that loads the fake database that is used in the rest of the website. In the final version of this project we will use a real database so this problem will no longer exist.  If you follow the instructions above the first page loded will be the main, and the site will run correctly.
 
