@@ -90,9 +90,9 @@ We performed multiples tests for each funcionality of our system. To test the fu
 
 #### Forms testing:
 The following forms were tested:
-* Payment:   
-* SignUp:   
-* Edit/Add Products:  
+* Payment: We verify many inputs from the user, like the name, which can not contain numbers, and the phone number, which can not contain letters, but may contain special characters. All inputs except for the "complemento" input are required. We tested the form validation trying to submit the payment with many "wrong" inputs. The forms validation works and the payment is only submitted if every informtion required is filled and correct.  
+* SignUp: We verify many inputs from the user, like the name, which can not contain numbers, the phone number, which can not contain letters, but may contain special characters, and the passwords. All inputs except for the "complemento" input are required. We tested the form validation trying to submit the new user with many "wrong" inputs. The forms validation works and the new user can only be registered if every information required is filled and correct.   
+* Edit/Add Products: We do not allow numbers in the name of the product and prices that are equal or bellow 0. Every input except for the "cuidados" input is required. We tested this form trying to submit the product with missing information or wrong values, and the form works.   
 
 
 #### Back-End testing:  
