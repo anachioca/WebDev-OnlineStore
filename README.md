@@ -69,7 +69,7 @@ The main page is responsive, and the background image changes according to the s
  
 ## Comments About the Code:
 
-In this project, CSS3, HTML5, Bootstrap, JavaScript and Python (for the server) were used.
+In this project, CSS3, HTML5, Bootstrap, JavaScript, vue, Node (for the server), MongoDB (for database) and Heroku (for deploy) were used.
 
 ## Test Plan:
 
@@ -118,7 +118,7 @@ Or simply access our webpage [here](http://maplantinhas.herokuapp.com/)
 
 ## Problems:
  We had some problems to implement a single navbar html file and use it in all the other pages, and now (2nd milestone) we are able to do this by using javascipt.
- In the last Peer Review, the reviwers noticed that the modal for the "cuidados" button doesn't work if you add the care instructions to products that didn't previously have it. We have fixed that problem.
+ We did not implement safety and data security and protection. Some vunerabilities as permission scaling and logged user password dump, can be explored if the attaker has some basic knologe of web development.
 
 ## Comments:
- We did not implement safety and data security and protection.
+ In the last Peer Review, the reviwers noticed that the modal for the "cuidados" button doesn't work if you add the care instructions to products that didn't previously have it. We have fixed that problem.
