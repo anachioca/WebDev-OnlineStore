@@ -93,8 +93,8 @@ We performed multiples tests for each funcionality of our system. To test the fu
 
 To execute our program, you must install [npm](https://www.npmjs.com/) and [NodeJS](https://nodejs.org/en/)
 
-To install the dependencies run `npm install`
-Run `mpn start` in the same directory as the project's folders are.  
+To install the dependencies run `npm install`.   
+To run our website, run `npm start` in the same directory as the project's folders are.  
 Type `http://localhost:3000/` on your browser to access our main page.
 
 Or simply access our webpage [here](http://maplantinhas.herokuapp.com/)
