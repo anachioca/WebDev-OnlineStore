@@ -98,7 +98,7 @@ async function delUser(){
     if(resp.status == 400){
       alert("Falha ao deletar conta")
     }else{
-      alert('Obrigado por usar nossa loja, volte quanto quiser!!')
+      alert('Obrigado por fazer parte da família MAPlnatinhas, volte quando quiser!!')
       logout();
     }
   }
