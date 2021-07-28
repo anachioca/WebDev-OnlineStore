@@ -12,13 +12,13 @@ You can access our website on http://maplantinhas.herokuapp.com/
 
 ## Requirements:
 * The system must have 2 types of users: Clients and Administrators.
-  * Administrators are responsible for registering/managing administrators, customers, and products/services provided. The application already comes with an account admin with password admin. Admins are a special kind of user.
+  * Administrators are responsible for registering/managing administrators, customers, and products/services provided. The application already comes with an account admin@gmail.com with password admin. Admins are a special kind of user.
   * Customers are users who access the system to buy products/services.
 * The admin record includes: name, id, phone, email and password.
 * Each customer's record includes: name, id, address, phone, email and password.
 * Product/services records includes: name, id, photo, description, price, size, quantity (in stock), quantity sold.
 * Selling Products: Products are selected, their quantity chosen, and are included in a cart. Products are purchased using a credit card number (any number is accepted by the system). The quantity of product sold is subtracted from the quantity in stock and added to the quantity sold. Carts are emptied only on payment or by customers.
-* Product Management: Administrators can create/update/read/delete new products and services.
+* Product Management: Administrators can create/update/read/delete products and services.
 * Your functionality: In this website, for all plants in the sales catalog, there will be a small manual on how to take care of it.
 * The system must provide accessibility requirements and provide good usability. The system must be responsive.
 
@@ -42,19 +42,20 @@ The navbar appears in every page of our application, and was made using Bootstra
 This page is shown in the navbar when the administrator is logged in.
 In this page the admin can manage the available products or the users that are registered on the plataform. He can turn a normal user (client) into a new administrator. He could also add new products or edit the already existing ones.
 
+#### User Page
+
+
 #### Login Page
 In this page the user can login the website's system using a registerd email and password. After connected the user will be redirected to the main page, if logged with a client account, or to admin page if logged with an admin account.<br>
 If the user doesn't have a registered account, he can access the register page from this page.<br>
 
 ##### Login as Admin (mocked)
-Login: 1@1.com <br>
-Password: 123
+Login: admin@gmail.com <br>
+Password: admin
 
 ##### Login as regular user
 Login: m@m.com <br>
 Password: 123<br>
-There are others mocked users, and you can see all of them inside the "data" folder > users.js. <br>
-Or, you can register yourself and login as a regular user.
 
 #### Products Page
 This page shows all the products available in our online shop. The product cards are loaded in this page using javascript. All products are saved in local storage, and we load each of them separately. This way, if an administrator adds a new product or edits an already existing one, the products page will be automatically updated.
